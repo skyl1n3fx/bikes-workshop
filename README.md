@@ -10,7 +10,9 @@ JAVA_HOME
 - _Mysql_
 
 ## Run Locally
-´´sql
-CREATE DATABASE basenegrotono;
-´´
 
+
+
+```sql
+CREATE DATABASE basenegrotono;
+```
