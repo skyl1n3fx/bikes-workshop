@@ -5,6 +5,12 @@ JAVA_HOME
 
 ## Setup 
 - _Hibernate_
-- _mysqldriver_
-- _glashfish server 4.0_
-- mysql
+- _Mysqldriver_
+- _Glashfish server 4.0_
+- _Mysql_
+
+## Run Locally
+´´sql
+CREATE DATABASE basenegrotono;
+´´
+
