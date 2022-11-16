@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-oct-2022 19:25:14 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.dto.Producto" table="producto" catalog="basenegrotono" optimistic-lock="version">
+        <id name="idProducto" type="java.lang.Integer">
+            <column name="id_producto" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categoria" class="modelo.dto.Categoria" fetch="select">
+            <column name="id_categoria" not-null="true" />
+        </many-to-one>
+        <many-to-one name="marca" class="modelo.dto.Marca" fetch="select">
+            <column name="id_marca" not-null="true" />
+        </many-to-one>
+        <property name="precio" type="int">
+            <column name="precio" not-null="true" />
+        </property>
+        <property name="stock" type="int">
+            <column name="stock" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" not-null="true" />
+        </property>
+        <property name="imagen" type="string">
+            <column name="imagen" not-null="true" />
+        </property>
+        <property name="descuento" type="int">
+            <column name="descuento" not-null="true" />
+        </property>
+        <set name="productoVentas" table="producto_venta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_producto" not-null="true" />
+            </key>
+            <one-to-many class="modelo.dto.ProductoVenta" />
+        </set>
+    </class>
+</hibernate-mapping>

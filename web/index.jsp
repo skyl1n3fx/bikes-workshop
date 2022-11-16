@@ -1,0 +1,494 @@
+<%-- 
+    Document   : index
+    Created on : 21-10-2022, 5:40:03
+    Author     : duguz
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>El Negro Toño</title>
+
+        <link rel="stylesheet" href="index.css"><!-- importo el css -->
+        <link rel="stylesheet" href="productcard.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    </head>
+
+
+    <body>
+        <!-- Div de despacho gratis sobre 100k -->
+        <div class="div-1">
+            <div class="text-center" color="#008000" >
+                Envío gratuito para compras superiores a <b>$100.000</b>
+            </div>
+        </div>
+
+
+        <!-- div de navbar -->
+        <div>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+                <div class="container-fluid text-center">
+                    <a class="navbar-brand"> </a>
+                    <img src="https://cdn.discordapp.com/attachments/980994339675197460/1018028559446573099/reparacion.jpg" alt="Logo" style="width:40px;" class="rounded-pill">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            
+                            <li class="nav-item" >
+                                <a class="nav-link" href="index.jsp">Home</a>
+                            </li> 
+                            
+                            <li class="nav-item"  >
+                                <a class="nav-link"  href="admin/admin.jsp" >Productos</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="reparacion.jsp">Servicios</a>
+                            </li>
+                            
+                            
+                            
+                            
+                            <li class="nav-item" >
+                                <a class="nav-link" href="registrarCliente.jsp">Registro</a>
+                            </li>
+
+                            <li class="nav-item" >
+                                <a class="nav-link" href="login.jsp">Cuenta</a>
+                            </li> 
+                            
+                            <li class="nav-item"  >
+                                <a class="nav-link"  href="empleado/empleado.jsp" >Empleado</a>
+                            </li>
+
+                        </ul>
+                    </div> 
+                </div>
+            </nav>
+        </div>
+
+
+
+        <!--carrousel -->
+
+
+        <div class="padding-bottom">
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://cdn.discordapp.com/attachments/980994339675197460/1019691386372628531/unknown.png" alt="1" class="img-fluid">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://cdn.discordapp.com/attachments/980994339675197460/1019455599076974602/unknown.png" alt="2" class="img-fluid">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.discordapp.com/attachments/980994339675197460/1019454871021305916/unknown.png" alt="3"  class="img-fluid">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.discordapp.com/attachments/980994339675197460/1019454910430986280/unknown.png" alt="4" class="img-fluid">
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>             
+                </button>
+
+
+            </div>
+        </div>
+
+
+
+
+        <div class="container mx-auto">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="header">
+                        <p>  </p>
+                        <h1>Productos populares</h1>
+                        <p>  </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row row-cols-1 row-cols-md-3 padding-bottom">
+                <div class="col text-center">
+                    <div class="card position-relative bg-secondary mb-3" style="max-width: 25rem; max-height: 38rem; height: 100%"  >
+                        <img src="https://cdn.discordapp.com/attachments/980994339675197460/1021901600081584198/unknown.png" width="100%" class="card-img-top img-fluid" alt="" >
+                        <div class="card-body">
+
+                            <p class="card-text"> </p>
+                            <a href="compra.jsp" class="btn btn-primary stretched-link" href="compra.jsp" >Comprar</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col position-relative text-center">
+                    <!-- segunda carta-->
+                    <div class="card position-relative bg-secondary mb-3" style="max-width: 25rem; max-height: 38rem; height: 100%"  >
+                        <img src="https://tuvalum.com/blog/wp-content/uploads/2021/02/46.jpg" class="card-img-top img-fluid" alt="" ">
+                        <div class="card-body">
+                            <p class="card-text "> </p>
+                            <a href="compra.jsp" class="btn btn-primary stretched-link">Ir al producto</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col position-relative text-center">
+                    <div class="card bg-secondary mb-3 position-relative" style="max-width: 25rem; max-height: 38rem; height: 100%"  >
+                        <img  width="100%" src="data:image/jpeg;base64,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" class="card-img-top img-fluid" alt="">
+                        <div class="card-body">
+                            <p class="card-text " > </p>
+                            <a href="compra.jsp" class="btn btn-primary stretched-link" >Ir al producto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row row-cols-2 row-cols-md-2 g-4 padding-bottom">
+                <a class="btn btn-outline-light" href="#1" style=" max-width: 40rem; height: auto;">
+                    <img src="https://static.crossmountain.cl/a/500/images/banners/categora_bicicletas_57_8658.webp?treat2" width="100%"  class="card-img" > 
+                </a><!-- comment -->
+                <a class="btn btn-outline-light " href="#2" style=" max-width: 40rem; height: auto;"> 
+                    <img src="https://static.crossmountain.cl/a/500/images/banners/categora_indumentaria_26_68bd.webp?treat2" width="100%"  class="card-img" > 
+                </a><!-- comment -->
+                <a class="btn btn-outline-light" href="#3" style=" max-width: 40rem; height: auto;">
+                    <img src="https://static.crossmountain.cl/a/500/images/banners/protecciones_neumticos_27_2504.webp?treat2" width="100%"  class="card-img" > 
+                </a><!-- comment -->
+                <a class="btn btn-outline-light" href="#4" style=" max-width: 40rem; height: auto;">
+                    <img src="https://static.crossmountain.cl/a/500/images/banners/categora_mantencin-y-lubricacin_24_b807.webp?treat2" width="100%"  class="card-img" > 
+                </a><!-- comment -->
+
+            </div>
+        </div>
+
+        <div class="container mx-auto">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="header">
+                        <p>  </p>
+                        <h2>Nuestros Servicios</h2>
+                        <p>  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-area padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-price">
+                            <div class="deal-top">
+                                <h3>Mantención Básica</h3>
+                                <h4> $ 15.000 <span class="sup"></span> </h4> 
+                            </div>
+                            <div class="deal-bottom">
+                                <ul class="deal-item">
+                                    <li>Limpieza General</li>
+                                    <li>Lubricación de cadena</li>
+                                    <li>Ajuste de Frenos</li>
+                                    <li>Ajuste de cambios</li>
+                                </ul>
+                                <div class="btn-area">
+                                    <a href="https://wa.me/56976810505">Agendar</a>      
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-price">
+                            <div class="deal-top">
+                                <h3>Armado de bicicleta</h3>
+                                <h4> $ 15.000 <span class="sup"></span> </h4>
+                            </div>
+                            <div class="deal-bottom">
+                                <ul class="deal-item">
+                                    <li>Revisión de la bicicleta</li>
+                                    <li>Engrasado Correspondiente</li>
+                                    <li>Armado</li>
+                                    <li>Ajuste de frenos </li>
+                                    <li>Ajuste de Cambios </li>
+                                </ul>
+                                <div class="btn-area">
+
+                                    <a href="https://wa.me/56976810505">Agendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-price">
+                            <div class="deal-top">
+                                <h3>Mantención full</h3>
+                                <h4> $ 50.000 <span class="sup"></span> </h4> 
+                            </div>
+                            <div class="deal-bottom">
+                                <ul class="deal-item">
+                                    <li>Desarme total</li>
+                                    <li>Engrasado</li>
+                                    <li>Mantencion de Ruedas</li>
+                                    <li>Sangrado de Frenos </li>
+                                    <li>Ajuste de Cambios </li>
+                                    <li>Ajuste de Frenos</li>
+                                    <li>Cambio de Piola y fundas</li>
+
+                                </ul>
+                                <div class="btn-area">
+                                    <a href="https://wa.me/56976810505">Agendar</a>       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </div>
+        
+        <div class="container mx-auto">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="header">
+                        <p>  </p>
+                        <h2>Preguntas y Respuestas</h2>
+                        <p>  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pricing-area padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-price">
+                            <div class="deal-top">
+                                <li>Juan Carlos</li>
+                            </div>
+                            <div class="deal-bottom">
+                                <ul class="deal-item">
+                                    <h2>¿Que piensas sobre la atenciòn de la empresa?</h2>
+                                    <li>Me parecio una atenciòn muy profesional no esperaba menos de su tienda la recomiendo a full.</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-price">
+                            <div class="deal-top">
+                                <li>Piero Sanchez</li>
+                            </div>
+                            <div class="deal-bottom">
+                                <ul class="deal-item">
+                                    <h2>¿Que te parecio nuestros servicios?</h2>
+                                    <li>Me parecio bastante buena la tienda en general y màs con sus buenos productos de calidad</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-price">
+                            <div class="deal-top">
+                                <li>Bayron Sanchez</li> 
+                            </div>
+                            <div class="deal-bottom">
+                                <ul class="deal-item">
+                                    <h2>¿Crees que estamos bien ubicados?</h2>
+                                    <li>Estan muy bien ubicados para las personas de la comuna y me gustaria destacar la muy buena accesibilidad de la tienda.</li>
+
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </body>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer
+        class="text-center text-lg-start text-white"
+        style="background-color: #16A086"
+        >
+        <!-- Section: Social media -->
+        <section
+            class="d-flex justify-content-between p-4"
+            style="background-color: #262626"
+            >
+            <!-- Left -->
+            <div class="me-5">
+                <span></span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="text-white me-4">
+                    <i class="fa fa-facebook-f"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="fa fa-google"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold">Negro Toño</h6>
+                        <hr
+                            class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px"
+                            />
+                        <p>
+                            Acá puedes encontrar información adicional sobre nuestra tienda
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Información</h6>
+                        <hr
+                            class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px"
+                            />
+                        <p>
+                            <a href="#!" class="text-white">Garantia</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Politica de Cambios</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Taller</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">¿Puedo devolver mi pedido?</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold"></h6>
+                        <hr
+                            class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px"
+                            />
+                        <p>
+                            <a href="#!" class="text-white">Terminos Y condiciones</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Politicas de Privacidad</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Politica de Cookies</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Ayuda</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Nuestra Tienda</h6>
+                        <hr
+                            class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px"
+                            />
+                        <p><i class="fas fa-home mr-3"></i> El Peñón 2662, Puente Alto</p>
+                        <p><i class="fas fa-envelope mr-3"></i> contacto@negroTono.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 56 9 02711538</p>
+                        <p><i class="fas fa-print mr-3"></i> + 56 9 51877279</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+            >
+            © 2022 Copyright
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+
+</html>
