@@ -11,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.dao.ReparacionDao;
-import modelo.dto.Reparacion;
+import model.dao.ReparacionDao;
+import model.dto.Reparacion;
 
 /**
  *
@@ -40,7 +40,7 @@ public class servletReparacion extends HttpServlet {
             Reparacion reparacion = new Reparacion(nombreRepa, descripcion);
             
             
-            if (dao.agregar(reparacion)){
+            if (dao.create(reparacion)){
                 System.out.println("Agregado Correctamente");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else{
