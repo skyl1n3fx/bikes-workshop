@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 
@@ -9,7 +9,7 @@ package model.dto;
 public class Reparacion  implements java.io.Serializable {
 
 
-     private Integer idReparacion;
+     private Integer id;
      private String nombreRepa;
      private String descripcion;
 
@@ -21,12 +21,12 @@ public class Reparacion  implements java.io.Serializable {
        this.descripcion = descripcion;
     }
    
-    public Integer getIdReparacion() {
-        return this.idReparacion;
+    public Integer getId() {
+        return this.id;
     }
     
-    public void setIdReparacion(Integer idReparacion) {
-        this.idReparacion = idReparacion;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public String getNombreRepa() {
         return this.nombreRepa;

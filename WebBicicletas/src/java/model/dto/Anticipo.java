@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class Anticipo  implements java.io.Serializable {
 
 
-     private Integer idAnticipo;
+     private Integer id;
      private Empleado empleado;
      private String descripcion;
      private int cantidad;
@@ -26,12 +26,12 @@ public class Anticipo  implements java.io.Serializable {
        this.fechaAntici = fechaAntici;
     }
    
-    public Integer getIdAnticipo() {
-        return this.idAnticipo;
+    public Integer getId() {
+        return this.id;
     }
     
-    public void setIdAnticipo(Integer idAnticipo) {
-        this.idAnticipo = idAnticipo;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public Empleado getEmpleado() {
         return this.empleado;

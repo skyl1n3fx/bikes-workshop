@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 21-11-2022 2:02:37 by Hibernate Tools 4.3.1 -->
+<!-- Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.dto.Marca" table="marca" catalog="basenegrotono" optimistic-lock="version">
-        <id name="idMarca" type="java.lang.Integer">
-            <column name="id_marca" />
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
             <generator class="identity" />
         </id>
         <property name="descripcion" type="string">

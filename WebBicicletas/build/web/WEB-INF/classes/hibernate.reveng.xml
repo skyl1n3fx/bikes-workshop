@@ -41,18 +41,18 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="basenegrotono"/>
-  <table-filter match-name="anticipo"/>
-  <table-filter match-name="cliente"/>
-  <table-filter match-name="salud"/>
-  <table-filter match-name="reparacion"/>
-  <table-filter match-name="tipocuenta"/>
-  <table-filter match-name="liquidacione"/>
-  <table-filter match-name="venta"/>
-  <table-filter match-name="producto_venta"/>
-  <table-filter match-name="producto"/>
-  <table-filter match-name="empleado"/>
   <table-filter match-name="renuncia"/>
-  <table-filter match-name="categoria"/>
+  <table-filter match-name="reparacion"/>
+  <table-filter match-name="venta"/>
+  <table-filter match-name="tipocuenta"/>
+  <table-filter match-name="producto"/>
   <table-filter match-name="marca"/>
+  <table-filter match-name="liquidacione"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="anticipo"/>
+  <table-filter match-name="salud"/>
+  <table-filter match-name="producto_venta"/>
+  <table-filter match-name="empleado"/>
+  <table-filter match-name="categoria"/>
   <table-filter match-name="afp"/>
 </hibernate-reverse-engineering>

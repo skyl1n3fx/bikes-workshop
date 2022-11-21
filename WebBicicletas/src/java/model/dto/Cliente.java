@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Cliente  implements java.io.Serializable {
 
 
-     private Integer idCliente;
+     private Integer id;
      private Tipocuenta tipocuenta;
      private String nombre;
      private String apellido;
@@ -45,12 +45,12 @@ public class Cliente  implements java.io.Serializable {
        this.ventas = ventas;
     }
    
-    public Integer getIdCliente() {
-        return this.idCliente;
+    public Integer getId() {
+        return this.id;
     }
     
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public Tipocuenta getTipocuenta() {
         return this.tipocuenta;

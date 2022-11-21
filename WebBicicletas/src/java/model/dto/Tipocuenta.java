@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Tipocuenta  implements java.io.Serializable {
 
 
-     private int idTipoCuenta;
+     private int id;
      private String descripcion;
      private Set empleados = new HashSet(0);
      private Set clientes = new HashSet(0);
@@ -20,23 +20,23 @@ public class Tipocuenta  implements java.io.Serializable {
     }
 
 	
-    public Tipocuenta(int idTipoCuenta, String descripcion) {
-        this.idTipoCuenta = idTipoCuenta;
+    public Tipocuenta(int id, String descripcion) {
+        this.id = id;
         this.descripcion = descripcion;
     }
-    public Tipocuenta(int idTipoCuenta, String descripcion, Set empleados, Set clientes) {
-       this.idTipoCuenta = idTipoCuenta;
+    public Tipocuenta(int id, String descripcion, Set empleados, Set clientes) {
+       this.id = id;
        this.descripcion = descripcion;
        this.empleados = empleados;
        this.clientes = clientes;
     }
    
-    public int getIdTipoCuenta() {
-        return this.idTipoCuenta;
+    public int getId() {
+        return this.id;
     }
     
-    public void setIdTipoCuenta(int idTipoCuenta) {
-        this.idTipoCuenta = idTipoCuenta;
+    public void setId(int id) {
+        this.id = id;
     }
     public String getDescripcion() {
         return this.descripcion;

@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 
@@ -9,7 +9,7 @@ package model.dto;
 public class Liquidacione  implements java.io.Serializable {
 
 
-     private Integer idLiquidacion;
+     private Integer id;
      private Empleado empleado;
      private String descripcion;
      private int descuentoAfp;
@@ -27,12 +27,12 @@ public class Liquidacione  implements java.io.Serializable {
        this.totalLiquido = totalLiquido;
     }
    
-    public Integer getIdLiquidacion() {
-        return this.idLiquidacion;
+    public Integer getId() {
+        return this.id;
     }
     
-    public void setIdLiquidacion(Integer idLiquidacion) {
-        this.idLiquidacion = idLiquidacion;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public Empleado getEmpleado() {
         return this.empleado;

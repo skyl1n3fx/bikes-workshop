@@ -15,7 +15,7 @@ public interface IOperation <T>{
     // Generic crud
     public boolean create(T entity);
     public boolean delete(int pk);
-    public boolean findById(int pk);
+    public T findById(int pk);
     public boolean update(T entity);
     public List<T> list();
 }

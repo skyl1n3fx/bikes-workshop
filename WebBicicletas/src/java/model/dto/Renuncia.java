@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class Renuncia  implements java.io.Serializable {
 
 
-     private Integer idRenuncia;
+     private Integer id;
      private Empleado empleado;
      private String descripcion;
      private Date fechaRenuncia;
@@ -24,12 +24,12 @@ public class Renuncia  implements java.io.Serializable {
        this.fechaRenuncia = fechaRenuncia;
     }
    
-    public Integer getIdRenuncia() {
-        return this.idRenuncia;
+    public Integer getId() {
+        return this.id;
     }
     
-    public void setIdRenuncia(Integer idRenuncia) {
-        this.idRenuncia = idRenuncia;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public Empleado getEmpleado() {
         return this.empleado;

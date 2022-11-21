@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Afp  implements java.io.Serializable {
 
 
-     private int idAfp;
+     private int id;
      private String descripcion;
      private int descuento;
      private Set empleados = new HashSet(0);
@@ -20,24 +20,24 @@ public class Afp  implements java.io.Serializable {
     }
 
 	
-    public Afp(int idAfp, String descripcion, int descuento) {
-        this.idAfp = idAfp;
+    public Afp(int id, String descripcion, int descuento) {
+        this.id = id;
         this.descripcion = descripcion;
         this.descuento = descuento;
     }
-    public Afp(int idAfp, String descripcion, int descuento, Set empleados) {
-       this.idAfp = idAfp;
+    public Afp(int id, String descripcion, int descuento, Set empleados) {
+       this.id = id;
        this.descripcion = descripcion;
        this.descuento = descuento;
        this.empleados = empleados;
     }
    
-    public int getIdAfp() {
-        return this.idAfp;
+    public int getId() {
+        return this.id;
     }
     
-    public void setIdAfp(int idAfp) {
-        this.idAfp = idAfp;
+    public void setId(int id) {
+        this.id = id;
     }
     public String getDescripcion() {
         return this.descripcion;

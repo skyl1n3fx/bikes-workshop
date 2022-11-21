@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Marca  implements java.io.Serializable {
 
 
-     private Integer idMarca;
+     private Integer id;
      private String descripcion;
      private Set productos = new HashSet(0);
 
@@ -27,12 +27,12 @@ public class Marca  implements java.io.Serializable {
        this.productos = productos;
     }
    
-    public Integer getIdMarca() {
-        return this.idMarca;
+    public Integer getId() {
+        return this.id;
     }
     
-    public void setIdMarca(Integer idMarca) {
-        this.idMarca = idMarca;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public String getDescripcion() {
         return this.descripcion;

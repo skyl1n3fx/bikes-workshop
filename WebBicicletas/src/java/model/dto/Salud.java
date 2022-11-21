@@ -1,5 +1,5 @@
 package model.dto;
-// Generated 21-11-2022 2:02:36 by Hibernate Tools 4.3.1
+// Generated 21-11-2022 2:20:43 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Salud  implements java.io.Serializable {
 
 
-     private Integer idSalud;
+     private Integer id;
      private String descripcion;
      private int descuento;
      private Set empleados = new HashSet(0);
@@ -30,12 +30,12 @@ public class Salud  implements java.io.Serializable {
        this.empleados = empleados;
     }
    
-    public Integer getIdSalud() {
-        return this.idSalud;
+    public Integer getId() {
+        return this.id;
     }
     
-    public void setIdSalud(Integer idSalud) {
-        this.idSalud = idSalud;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public String getDescripcion() {
         return this.descripcion;
