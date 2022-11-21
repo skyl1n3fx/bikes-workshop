@@ -127,6 +127,31 @@ public class servletProducto extends HttpServlet {
         
         
     }
+    
+    private void createProduc(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        try{
+            Producto product = new Producto();
+            product.setPrecio(Integer.parseInt(request.getParameter("txtPrecio")));
+            product.setStock(Integer.parseInt(request.getParameter("txtStock")));
+            product.setDescripcion(request.getParameter("txtDescripcion"));
+            product.setImagen(request.getParameter("txtImagen"));
+            product.generatePromotion(Integer.parseInt(request.getParameter("cboPromotion")));
+            Marca marca = new Marca(Integer.parseInt(request.getParameter("cboMarca")));
+            Categoria categoria = new Categoria(Integer.parseInt(request.getParameter("cboCategoria")));
+            product.setMarca(marca);
+            product.setCategoria(categoria);
+            if(dao.update(product)){
+                request.getSession().setAttribute("msgCreateProduct", "Creado correctamente");
+            }else{
+                request.getSession().setAttribute("msgCreateProduct", "No se pudo crear");
+            }
+        } catch (Exception e) {
+            request.getSession().setAttribute("msgCreateProduct", "Error:" + e.getMessage());
+        }finally{
+            response.sendRedirect("admin/products/products.jsp");
+        }    
+    
+    }
 
     private void updateProduct(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
@@ -142,12 +167,12 @@ public class servletProducto extends HttpServlet {
             product.setMarca(marca);
             product.setCategoria(categoria);
             if(dao.update(product)){
-                request.getSession().setAttribute("msgUpdateProducto", "Actualizado correctamente");
+                request.getSession().setAttribute("msgUpdateProduct", "Actualizado correctamente");
             }else{
-                request.getSession().setAttribute("msgUpdateProducto", "No se pudo actualizar");
+                request.getSession().setAttribute("msgUpdateProduct", "No se pudo actualizar");
             }
         } catch (Exception e) {
-            request.getSession().setAttribute("msErrorRegistrarEquipo", "Error:" + e.getMessage());
+            request.getSession().setAttribute("msgUpdateProduct", "Error:" + e.getMessage());
         }finally{
             response.sendRedirect("admin/products/products.jsp");
         }
