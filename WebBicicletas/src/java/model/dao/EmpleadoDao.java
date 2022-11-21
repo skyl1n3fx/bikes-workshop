@@ -5,10 +5,17 @@
  */
 package model.dao;
 
+import model.base.BaseModel;
+import model.dto.Empleado;
+
 /**
  *
- * @author jorge
+ * @author duguz
  */
-public class EmpleadoDao {
+public class EmpleadoDao extends BaseModel<Empleado> {
     
+    @Override
+    public String getModelName() {
+        return Empleado.class.getSimpleName();
+    }
 }
