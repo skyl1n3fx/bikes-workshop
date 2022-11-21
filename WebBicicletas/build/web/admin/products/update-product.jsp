@@ -1,7 +1,7 @@
 <%-- 
     Document   : update-product
     Created on : 21-11-2022, 12:13:38
-    Author     : jorge
+    Author     : duguz
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
