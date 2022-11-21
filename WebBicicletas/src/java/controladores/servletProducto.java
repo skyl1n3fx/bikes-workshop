@@ -12,10 +12,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.dao.ProductoDao;
-import modelo.dto.Categoria;
-import modelo.dto.Marca;
-import modelo.dto.Producto;
+import model.dao.ProductoDao;
+import model.dto.Categoria;
+import model.dto.Marca;
+import model.dto.Producto;
 
 /**
  *
