@@ -79,12 +79,15 @@
             <td>${x.stock}</td>
             <td>$${x.descuento}</td>
             <td>
-                <input class="btn btn-primary" type="submit" value="Modificar" />
-                <input class="btn btn-danger" type="submit" value="Eliminar" />
+                <a class="btn btn-primary" href="../../servletProducto?id=${x.id}">Modificar</a>
+                <a class="btn btn-danger"  onclick="deleteEntity('Producto','${x.id}')">Eliminar</a>
             </td>
           </tr>
         </c:forEach>
         </tbody>
       </table>
+        
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../validation/delete-message.js"></script>
     </body>
 </html>
