@@ -17,7 +17,7 @@ public class MarcaDao extends BaseModel<Marca>{
 
     @Override
     public String getModelName() {
-        return "Marca";
+        return Marca.class.getSimpleName();
     }
     
 }

@@ -16,7 +16,7 @@ public class ProductoDao extends BaseModel<Producto>{
     
     @Override
     public String getModelName() {
-        return "Producto";
+        return Producto.class.getSimpleName();
     }
     
 }

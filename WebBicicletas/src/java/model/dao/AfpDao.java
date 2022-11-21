@@ -15,6 +15,6 @@ import model.dto.Afp;
 public class AfpDao extends BaseModel<Afp>{
     @Override
     public String getModelName() {
-        return "Afp";
+        return Afp.class.getSimpleName();
     }
 }
