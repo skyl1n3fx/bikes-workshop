@@ -49,7 +49,7 @@ public class servletProducto extends HttpServlet {
             Marca marca = new Marca(idMarca);
             Categoria categoria = new Categoria(idCategoria);
             Producto producto = new Producto(categoria, marca, precio, stock, descripcion, imagen, descuento);
-            if (dao.agregar(producto)){
+            if (dao.create(producto)){
                 System.out.println("Agregado Correctamente");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else{
@@ -61,7 +61,7 @@ public class servletProducto extends HttpServlet {
         if (request.getParameter("btnAccion").equals("Eliminar")) {
             int idProducto = Integer.parseInt(request.getParameter("txtId"));;
            
-            if ( dao.eliminar(idProducto) ) {
+            if ( dao.delete(idProducto) ) {
                 System.out.println("ELIMINADO CORRECIAMENTE");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
 
@@ -74,7 +74,7 @@ public class servletProducto extends HttpServlet {
         
         
         if (request.getParameter("btnAccion").equals("Listar")) {
-            for (Producto aux : dao.listar()) {
+            for (Producto aux : dao.list()) {
          
              System.out.println("User: " + aux.getDescripcion()); 
              System.out.println("Pass: " + aux.getCategoria().getDescripcion()); 
