@@ -13,13 +13,14 @@ import javax.swing.JOptionPane;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import model.base.GeneratePDF;
 
 /**
  *
  * @author duguz
  */
 
-public class BaseModel <T> implements IOperation<T>{
+public abstract class BaseModel <T> extends GeneratePDF<T> implements IOperation<T>{
 
     private String modelName;
     
@@ -137,4 +138,8 @@ public class BaseModel <T> implements IOperation<T>{
            JOptionPane.showMessageDialog(null, "¡" + getModelName() + " No pasó la prueba =(!"); 
         }
     }
+
+    @Override
+    public abstract void addTable();
+
 }
