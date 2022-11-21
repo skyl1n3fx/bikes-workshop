@@ -92,11 +92,11 @@
                 <label for="txtDescripcion" class="form-label">Descuento</label>
                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                     <option selected value="0">Sin descuento</option>
-                    <option value="1">10%</option>
-                    <option value="2">20%</option>
-                    <option value="3">30%</option> 
-                    <option value="4">40%</option>
-                    <option value="5">50%</option>
+                    <option value="10">10%</option>
+                    <option value="20">20%</option>
+                    <option value="30">30%</option> 
+                    <option value="40">40%</option>
+                    <option value="50">50%</option>
                 </select>
               </div>              
               

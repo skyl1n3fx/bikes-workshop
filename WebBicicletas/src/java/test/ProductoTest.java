@@ -15,7 +15,7 @@ public class ProductoTest {
     public static void main(String[] args) {
         Producto producto = new Producto();
         producto.setPrecio(10000);
-        producto.generatePromotion(5);
+        producto.generatePromotion(50);
         System.out.println(producto.getDescuento());
     }
 }
