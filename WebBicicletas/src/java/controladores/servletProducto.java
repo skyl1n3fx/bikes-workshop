@@ -22,7 +22,8 @@ import model.dto.Producto;
  * @author duguz
  */
 public class servletProducto extends HttpServlet {
-
+    
+    ProductoDao dao  = new ProductoDao();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,7 +35,6 @@ public class servletProducto extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProductoDao dao  = new ProductoDao();
         
         if  (request.getParameter("btnAccion").equals("Agregar")){
             int precio = Integer.parseInt(request.getParameter("txtPrecio"));
@@ -83,23 +83,49 @@ public class servletProducto extends HttpServlet {
         }
 
      }
-        
-        
+    }
+    
+    private void detailProduct(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        // Muestra los datos en un pagina
+        try {
+            int id = Integer.parseInt(request.getParameter("id"));
+            Producto product = dao.findById(id);
+            request.getSession().setAttribute("productDetail", product);
+        } catch (Exception e) {
+            request.getSession().setAttribute("msgAdminProduct", "Error al cargar");
+        }finally{
+            System.out.println("");
+            response.sendRedirect("admin/products/products.jsp");
+        }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        
+        // Eliminar producto
+        if(request.getParameter("pk")!=null){
+            int pk = Integer.parseInt(request.getParameter("pk"));
+            if(dao.delete(pk)){
+                request.getRequestDispatcher("admin/products/products.jsp").forward(request, response);
+            }
+            
+        }
+        
+        // Detail Product
+        if(request.getParameter("id")!=null){
+            detailProduct(request, response);
+        }
+        
+        
+        if(request.getParameter("pk")==null && request.getParameter("id")==null){
+            processRequest(request, response);
+        }
+        
+        
+        
     }
 
     /**
