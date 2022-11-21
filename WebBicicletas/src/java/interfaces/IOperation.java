@@ -11,10 +11,11 @@ import java.util.List;
  *
  * @author duguz
  */
-public interface MetodosCrud<Generico> {
-    public boolean agregar(Generico generico);
-    public boolean eliminar(int id);
-    public List<Generico> listar();
-    public Generico buscar(int id);
-    
+public interface IOperation <T>{
+    // Generic crud
+    public boolean create(T entity);
+    public boolean delete(int pk);
+    public boolean findById(int pk);
+    public boolean update(T entity);
+    public List<T> list();
 }
