@@ -109,8 +109,10 @@ public class Producto  implements java.io.Serializable {
         this.productoVentas = productoVentas;
     }
 
-
-
+    
+    public void generatePromotion(int value){
+        this.descuento = (value>5 || value <= 0) ? 0 : Math.round(this.precio * 10 * value / 100); 
+    }
 
 }
 
