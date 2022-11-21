@@ -128,18 +128,42 @@ public class servletProducto extends HttpServlet {
         
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    private void updateProduct(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        try {
+            int pk = Integer.parseInt(request.getParameter("txtId"));
+            Producto product = dao.findById(pk);
+            product.setPrecio(Integer.parseInt(request.getParameter("txtPrecio")));
+            product.setStock(Integer.parseInt(request.getParameter("txtStock")));
+            product.setDescripcion(request.getParameter("txtDescripcion"));
+            product.setImagen(request.getParameter("txtImagen"));
+            product.generatePromotion(Integer.parseInt(request.getParameter("cboPromotion")));
+            Marca marca = new Marca(Integer.parseInt(request.getParameter("cboMarca")));
+            Categoria categoria = new Categoria(Integer.parseInt(request.getParameter("cboCategoria")));
+            product.setMarca(marca);
+            product.setCategoria(categoria);
+            if(dao.update(product)){
+                request.getSession().setAttribute("msgUpdateProducto", "Actualizado correctamente");
+            }else{
+                request.getSession().setAttribute("msgUpdateProducto", "No se pudo actualizar");
+            }
+        } catch (Exception e) {
+            request.getSession().setAttribute("msErrorRegistrarEquipo", "Error:" + e.getMessage());
+        }finally{
+            response.sendRedirect("admin/products/products.jsp");
+        }
+    }
+            
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        String option = request.getParameter("btnAction");
+        
+        if(option.equals("Actualizar")){
+            updateProduct(request,response);
+        }
+        
+        //processRequest(request, response);
     }
 
     /**

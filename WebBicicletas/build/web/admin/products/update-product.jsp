@@ -42,8 +42,8 @@
               </div>
                
               <div class="mb-3">
-                <label for="txtDescripcion" class="form-label">Marca</label>
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <label for="cboMarca" class="form-label">Marca</label>
+                <select name="cboMarca" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                      <c:forEach var="x" items="${brands.rows}">
                         <c:choose>
                             <c:when test="${x.id == productDetail.marca.id}">
@@ -58,8 +58,8 @@
               </div>
               
               <div class="mb-3">
-                <label for="txtDescripcion" class="form-label">Categoria</label>
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <label for="cboCategoria" class="form-label">Categoria</label>
+                <select name="cboCategoria" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                      <c:forEach var="x" items="${categories.rows}">
                         <c:choose>
                             <c:when test="${x.id == productDetail.categoria.id}">
@@ -89,8 +89,8 @@
               </div>                       
 
               <div class="mb-3">
-                <label for="txtDescripcion" class="form-label">Descuento</label>
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <label for="cboPromotion" class="form-label">Descuento</label>
+                <select name="cboPromotion" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                     <option selected value="0">Sin descuento</option>
                     <option value="10">10%</option>
                     <option value="20">20%</option>
@@ -100,7 +100,7 @@
                 </select>
               </div>              
               
-              <button type="submit" class="btn btn-primary">Actualizar</button>
+              <button type="submit" class="btn btn-primary" name="btnAction" value="Actualizar">Actualizar</button>
             </form>
     </body>
 </html>
