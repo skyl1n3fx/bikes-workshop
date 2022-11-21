@@ -55,6 +55,7 @@
       <th scope="col">Accion</th>
     </tr>
   </thead>
+        <a class="btn btn-success" href="add-product.jsp">Agregar Producto</a>
         <tbody>
         <c:forEach var="x" items="${products.rows}">
           <tr>
