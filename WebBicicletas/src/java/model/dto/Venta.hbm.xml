@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-11-2022 2:02:37 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.dto.Venta" table="venta" catalog="basenegrotono" optimistic-lock="version">
+        <id name="idVenta" type="java.lang.Integer">
+            <column name="id_venta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="model.dto.Cliente" fetch="select">
+            <column name="id_cliente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="empleado" class="model.dto.Empleado" fetch="select">
+            <column name="id_empleado" not-null="true" />
+        </many-to-one>
+        <property name="fechaVenta" type="date">
+            <column name="fecha_venta" length="10" not-null="true" />
+        </property>
+        <set name="productoVentas" table="producto_venta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_venta" not-null="true" />
+            </key>
+            <one-to-many class="model.dto.ProductoVenta" />
+        </set>
+    </class>
+</hibernate-mapping>

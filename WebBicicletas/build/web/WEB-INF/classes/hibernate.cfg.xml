@@ -49,5 +49,19 @@ Contributor(s):
     <property name="hibernate.hbm2ddl.auto">validate</property>
     <!-- Esta propiedad permite mapear las tablas foráneas -->
     <property name="hibernate.enable_lazy_load_no_trans">true</property>
+    <mapping resource="model/dto/Cliente.hbm.xml"/>
+    <mapping resource="model/dto/Liquidacione.hbm.xml"/>
+    <mapping resource="model/dto/Anticipo.hbm.xml"/>
+    <mapping resource="model/dto/Producto.hbm.xml"/>
+    <mapping resource="model/dto/ProductoVenta.hbm.xml"/>
+    <mapping resource="model/dto/Salud.hbm.xml"/>
+    <mapping resource="model/dto/Empleado.hbm.xml"/>
+    <mapping resource="model/dto/Tipocuenta.hbm.xml"/>
+    <mapping resource="model/dto/Reparacion.hbm.xml"/>
+    <mapping resource="model/dto/Afp.hbm.xml"/>
+    <mapping resource="model/dto/Categoria.hbm.xml"/>
+    <mapping resource="model/dto/Renuncia.hbm.xml"/>
+    <mapping resource="model/dto/Marca.hbm.xml"/>
+    <mapping resource="model/dto/Venta.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
