@@ -62,10 +62,22 @@
             <td>${x.descripcion}</td>
             <td>${x.desc_marca}</td>
             <td>${x.desc_categoria}</td>
-            <td>${x.imagen}</td>
-            <td>${x.precio}</td>
+            <td>
+                <c:choose>
+                    <c:when test="${x.imagen != ''}">
+                        <img width="40px" height="40px" style="border-radius: 50%" 
+                        src="${x.imagen}" alt="${x.descripcion}"
+                        title="Imagen de producto ${x.descripcion}"/>
+                    </c:when>
+                    <c:otherwise>
+                        <img width="40px" height="40px" style="border-radius: 50%" 
+                        src="https://us.123rf.com/450wm/surfupvector/surfupvector1908/surfupvector190802662/129243509-icono-de-l%C3%ADnea-de-arte-denegado-censura-no-hay-foto-no-hay-imagen-disponible-rechazar-o-cancelar-con.jpg?ver=6"/>
+                    </c:otherwise>
+                </c:choose>                
+            </td>
+            <td>$${x.precio}</td>
             <td>${x.stock}</td>
-            <td>${x.descuento}</td>
+            <td>$${x.descuento}</td>
             <td>
                 <input class="btn btn-primary" type="submit" value="Modificar" />
                 <input class="btn btn-danger" type="submit" value="Eliminar" />
