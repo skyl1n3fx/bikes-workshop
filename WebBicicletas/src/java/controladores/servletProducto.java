@@ -128,7 +128,7 @@ public class servletProducto extends HttpServlet {
         
     }
     
-    private void createProduc(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    private void createProduct(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try{
             Producto product = new Producto();
             product.setPrecio(Integer.parseInt(request.getParameter("txtPrecio")));
@@ -140,7 +140,7 @@ public class servletProducto extends HttpServlet {
             Categoria categoria = new Categoria(Integer.parseInt(request.getParameter("cboCategoria")));
             product.setMarca(marca);
             product.setCategoria(categoria);
-            if(dao.update(product)){
+            if(dao.create(product)){
                 request.getSession().setAttribute("msgCreateProduct", "Creado correctamente");
             }else{
                 request.getSession().setAttribute("msgCreateProduct", "No se pudo crear");
@@ -186,6 +186,10 @@ public class servletProducto extends HttpServlet {
         
         if(option.equals("Actualizar")){
             updateProduct(request,response);
+        }
+
+        if(option.equals("Crear")){
+            createProduct(request,response);
         }
         
         //processRequest(request, response);
