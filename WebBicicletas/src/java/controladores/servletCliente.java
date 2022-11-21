@@ -11,9 +11,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.dao.ClienteDao;
-import modelo.dto.Cliente;
-import modelo.dto.Tipocuenta;
+import model.dao.ClienteDao;
+import model.dto.Cliente;
+import model.dto.Tipocuenta;
 
 /**
  *
@@ -45,7 +45,7 @@ public class servletCliente extends HttpServlet {
             Tipocuenta tipocuenta = new Tipocuenta(idTipoCuenta);
             Cliente cliente = new Cliente(tipocuenta, nombre, apellido, direccion, telefono, email, contrasena);
             
-            if (dao.agregar(cliente)){
+            if (dao.create(cliente)){
                 System.out.println("Agregado Correctamente");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else{
