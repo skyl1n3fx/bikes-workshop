@@ -1,10 +1,10 @@
 # bikes-workshop
 
 ## IDE
-Netbeans 8.2
+Netbeans 8.2.
 
 ## Environment Variables
-JAVA_HOME JDK 8
+JAVA_HOME JDK 8.
 
 ## Setup 
 - _Hibernate_
@@ -14,17 +14,17 @@ JAVA_HOME JDK 8
 
 ## Run Locally
 
-## Step 1.
-### Import database "basenegrotono" in mysql
+### Step 1.
+#### Import database "basenegrotono" in mysql.
 
-## Step 2.
-### Load Project in Netbeans IDE. (Verify dependencies)
+### Step 2.
+#### Load Project in Netbeans IDE. (Verify dependencies)
 - Check Hibernate Libraries.
 - Check mysql connector driver.
 - Check Glashfish server connection.
 
-## Step 3.
-### Clean and Build Project.
+### Step 3.
+#### Clean and Build Project.
 
-## Step 4.
-### Finally run project.
+### Step 4.
+#### Finally run project.
