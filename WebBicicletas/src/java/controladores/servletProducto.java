@@ -94,8 +94,7 @@ public class servletProducto extends HttpServlet {
         } catch (Exception e) {
             request.getSession().setAttribute("msgAdminProduct", "Error al cargar");
         }finally{
-            System.out.println("");
-            response.sendRedirect("admin/products/products.jsp");
+            response.sendRedirect("admin/products/update-product.jsp");
         }
     }
 
@@ -109,7 +108,8 @@ public class servletProducto extends HttpServlet {
         if(request.getParameter("pk")!=null){
             int pk = Integer.parseInt(request.getParameter("pk"));
             if(dao.delete(pk)){
-                request.getRequestDispatcher("admin/products/products.jsp").forward(request, response);
+                //request.getRequestDispatcher("admin/products/products.jsp").forward(request, response);
+                response.sendRedirect("admin/products/products.jsp");
             }
             
         }
