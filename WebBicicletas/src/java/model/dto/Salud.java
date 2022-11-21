@@ -19,6 +19,9 @@ public class Salud  implements java.io.Serializable {
     public Salud() {
     }
 
+    public Salud(int pk) {
+        this.id = pk;
+    }
 	
     public Salud(String descripcion, int descuento) {
         this.descripcion = descripcion;

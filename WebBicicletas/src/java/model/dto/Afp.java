@@ -15,8 +15,12 @@ public class Afp  implements java.io.Serializable {
      private String descripcion;
      private int descuento;
      private Set empleados = new HashSet(0);
-
+     
     public Afp() {
+    }
+    
+    public Afp(int pk) {
+        this.id = pk;
     }
 
 	

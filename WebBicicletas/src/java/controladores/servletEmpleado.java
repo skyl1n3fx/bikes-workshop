@@ -11,11 +11,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.dao.EmpleadoDao;
-import modelo.dto.Afp;
-import modelo.dto.Empleado;
-import modelo.dto.Salud;
-import modelo.dto.Tipocuenta;
+import model.dao.EmpleadoDao;
+import model.dto.Afp;
+import model.dto.Empleado;
+import model.dto.Salud;
+import model.dto.Tipocuenta;
 
 /**
  *
@@ -54,7 +54,7 @@ public class servletEmpleado extends HttpServlet {
             Tipocuenta tipocuenta = new Tipocuenta(idTipoCuenta);
             Empleado empleado = new Empleado(afp, salud, tipocuenta, rut, nombre, apellido, email, sueldoBase, userEmpe, contraEmp);
             
-            if (dao.agregar(empleado)){
+            if (dao.create(empleado)){
                 System.out.println("Agregado Correctamente");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else{

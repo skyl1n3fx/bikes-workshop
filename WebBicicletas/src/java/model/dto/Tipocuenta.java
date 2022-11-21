@@ -19,6 +19,9 @@ public class Tipocuenta  implements java.io.Serializable {
     public Tipocuenta() {
     }
 
+    public Tipocuenta(int pk) {
+        this.id = pk;
+    }
 	
     public Tipocuenta(int id, String descripcion) {
         this.id = id;
