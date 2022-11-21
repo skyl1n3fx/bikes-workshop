@@ -9,6 +9,7 @@ import interfaces.IOperation;
 import java.util.List;
 import model.dto.HibernateUtil;
 import java.util.List;
+import javax.swing.JOptionPane;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -25,7 +26,6 @@ public class BaseModel <T> implements IOperation<T>{
     // Variables para conectarse a la bd mediante Hibernate
     private static Session session;
     private static Transaction transaction;
-    
     
     public String getModelName() {
         return modelName;
@@ -130,4 +130,11 @@ public class BaseModel <T> implements IOperation<T>{
         return entities;
     }
     
+    public void testMessage(Boolean response){
+        if(response){
+            JOptionPane.showMessageDialog(null, "¡" + getModelName() + " Pasó la prueba!");
+        }else{
+           JOptionPane.showMessageDialog(null, "¡" + getModelName() + " No pasó la prueba =(!"); 
+        }
+    }
 }
