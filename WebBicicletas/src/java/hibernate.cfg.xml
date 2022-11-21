@@ -41,26 +41,13 @@ Contributor(s):
 -->
 <hibernate-configuration>
   <session-factory>
-    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/basenegrotono?zeroDateTimeBehavior=CONVERT_TO_NULL</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/basenegrotono?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.hbm2ddl.auto">validate</property>
     <!-- Esta propiedad permite mapear las tablas foráneas -->
     <property name="hibernate.enable_lazy_load_no_trans">true</property>
-    <mapping resource="modelo/dto/Venta.hbm.xml"/>
-    <mapping resource="modelo/dto/Anticipo.hbm.xml"/>
-    <mapping resource="modelo/dto/Producto.hbm.xml"/>
-    <mapping resource="modelo/dto/Renuncia.hbm.xml"/>
-    <mapping resource="modelo/dto/Tipocuenta.hbm.xml"/>
-    <mapping resource="modelo/dto/Salud.hbm.xml"/>
-    <mapping resource="modelo/dto/Cliente.hbm.xml"/>
-    <mapping resource="modelo/dto/Reparacion.hbm.xml"/>
-    <mapping resource="modelo/dto/Liquidacione.hbm.xml"/>
-    <mapping resource="modelo/dto/Afp.hbm.xml"/>
-    <mapping resource="modelo/dto/Categoria.hbm.xml"/>
-    <mapping resource="modelo/dto/ProductoVenta.hbm.xml"/>
-    <mapping resource="modelo/dto/Marca.hbm.xml"/>
-    <mapping resource="modelo/dto/Empleado.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

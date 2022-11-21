@@ -5,18 +5,6 @@
  */
 package test;
 
-import modelo.dao.CategoriaDao;
-import modelo.dao.ClienteDao;
-import modelo.dao.EmpleadoDao;
-import modelo.dao.ProductoDao;
-import modelo.dto.Afp;
-import modelo.dto.Categoria;
-import modelo.dto.Cliente;
-import modelo.dto.Empleado;
-import modelo.dto.Marca;
-import modelo.dto.Producto;
-import modelo.dto.Salud;
-import modelo.dto.Tipocuenta;
 
 /**
  *
@@ -48,14 +36,14 @@ public class test {
             System.out.println("contraseña: "+ aux.getContrasena());
         }*/
         
-        Marca marca = new Marca(1);
-        Categoria categoria = new Categoria(1);
-        Producto producto = new Producto(categoria, marca, 350000, 20, "bicicleta", "img1", 20000);
+        //Marca marca = new Marca(1);
+        //Categoria categoria = new Categoria(1);
+        //Producto producto = new Producto(categoria, marca, 350000, 20, "bicicleta", "img1", 20000);
         
-        ProductoDao dao = new ProductoDao();
+        //ProductoDao dao = new ProductoDao();
         
         //dao.agregar(producto);
-        dao.eliminar(4);
+        //dao.eliminar(4);
         
         
        
