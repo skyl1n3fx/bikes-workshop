@@ -33,7 +33,7 @@
               <!-- Incluimos la barra de navegación -->
         <jsp:include page="./navbar.jsp"></jsp:include>
 
-        
+         <h1 class="text-center">Catalogo</h1>
   
             <div class="container-fluid d-flex align-items-center">
                 <c:forEach var="x" items="${products.rows}">

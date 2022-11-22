@@ -46,7 +46,7 @@
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="reparacion.jsp">Servicios</a>
+                                <a class="nav-link" href="services.jsp">Servicios</a>
                             </li>
                             
                             <c:choose>
