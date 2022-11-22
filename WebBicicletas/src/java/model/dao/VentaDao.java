@@ -27,21 +27,4 @@ public class VentaDao extends BaseModel<Venta>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public List<ProductoVenta> filterByIdVenta(Integer pk){
-        List<ProductoVenta> detail = null;
-        try {
-            super.connect();
-            String consulta = "select x from " + getModelName()+ " x where x.idVenta = ?";
-            Query query = getSession().createQuery(consulta);
-            // Variable de sustitución
-            query.setParameter(0, pk);
-            detail = (List<ProductoVenta>) query.list();
-            
-        } catch (Exception e) {
-            System.out.println("Error al buscar " + e.getMessage());
-        }finally{
-            super.disconnect();
-        }
-        return detail;
-    }
 }

@@ -8,6 +8,11 @@
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<c:if test="${ userSession.tipo != 2}">
+    <c:redirect url="./login.jsp" >
+        <c:param name="errMsg" value="Please Enter UserName and Password" />
+    </c:redirect>
+</c:if>
 <sql:setDataSource var="dataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/basenegrotono?zeroDateTimeBehavior=convertToNull" user="root" password=""></sql:setDataSource>
 <sql:query dataSource="${dataSource}" var="categories">
     SELECT id, descripcion FROM CATEGORIA
