@@ -38,19 +38,26 @@ public class servletConsulta extends HttpServlet {
 
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
+    private void loadQuery(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        int id = Integer.parseInt(request.getParameter("id"));
+        ConsultaDao dao = new ConsultaDao();
+        Consulta consulta = dao.findById(id);
+        request.getSession().setAttribute("queryData", consulta);
+        response.sendRedirect("detalle-consulta.jsp");
+    }
+    
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        if(request.getParameter("id")!=null){
+            loadQuery(request, response);
+            return;
+        }
+        
+        
     }
 
  
@@ -72,6 +79,23 @@ public class servletConsulta extends HttpServlet {
         }
     }
     
+    
+    private void responder(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        try {
+            String descripcion = request.getParameter("txtDescripcion");
+            int id = Integer.parseInt(request.getParameter("txtId"));
+            ConsultaDao dao = new ConsultaDao();
+            Consulta consulta = dao.findById(id);
+            consulta.setDescripcion(descripcion);
+            consulta.setEstado("REVISADO");
+            dao.update(consulta);
+        } catch (Exception e) {
+            System.out.println("Error");
+        }finally{
+            response.sendRedirect("responder.jsp");
+        }
+    }
+        
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -79,7 +103,13 @@ public class servletConsulta extends HttpServlet {
         
         if(option.equals("Consultar")){
             consulta(request,response);
+            return;
         }
+        if(option.equals("Responder")){
+            responder(request,response);
+            return;
+        }        
+        
 
     }
 

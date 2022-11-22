@@ -4,9 +4,15 @@
     Author     : duguz
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<c:if test="${ userSession.tipo != 3}">
+    <c:redirect url="./login.jsp" >
+        <c:param name="errMsg" value="Please Enter UserName and Password" />
+    </c:redirect>
+</c:if>
 <!DOCTYPE html>
 <html>
     <head>

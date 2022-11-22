@@ -20,6 +20,10 @@ public class Consulta  implements java.io.Serializable {
         this.estado = estado;
     }
 
+    public Consulta() {
+    }
+
+    
     public Consulta(Integer id) {
         this.id = id;
     }

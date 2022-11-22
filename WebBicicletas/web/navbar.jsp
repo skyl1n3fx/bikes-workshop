@@ -73,12 +73,13 @@
                                     </li>   
                                 </c:when>   
                                 <c:when test="${userSession.session && userSession.tipo == 3}">
+   
                                     <li class="nav-item">
-                                        <a class="nav-link" href="reparacion.jsp">Cuenta</a>
-                                    </li>  
+                                        <a class="nav-link" href="reparacion.jsp">Agregar servicio</a>
+                                    </li>   
                                     
                                     <li class="nav-item">
-                                        <a class="nav-link" href="reparacion.jsp">Responder</a>
+                                        <a class="nav-link" href="responder.jsp">Responder Consultas</a>
                                     </li>   
                                 </c:when>            
                             </c:choose>
