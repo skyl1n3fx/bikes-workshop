@@ -35,7 +35,7 @@ function logout() {
         showCancelButton: true,
         cancelButtonColor: "#d33",
         cancelButtonText: "Cancelar",
-        confirmButtonText: "Si, cerrar sesion",
+        confirmButtonText: "Cerrar sesion",
     }).then((result) => {
         if (result.value) {
             Swal.fire(
