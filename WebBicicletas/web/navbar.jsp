@@ -56,7 +56,7 @@
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <a class="nav-link" href="products.jsp">Empleados</a>
+                                        <a class="nav-link" href="employees.jsp">Empleados</a>
                                     </li>
                                     
                                     <li class="nav-item">
