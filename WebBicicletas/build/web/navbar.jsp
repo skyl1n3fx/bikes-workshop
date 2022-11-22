@@ -11,8 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-
-        <!-- div de navbar -->
+    <body>
+              <!-- div de navbar -->
         <div>
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
                 <div class="container-fluid text-center">
@@ -40,11 +40,12 @@
                             
                             
                             <c:choose>
-                                <c:when test="${userSession.tipo > 0}">
+                                <c:when test="${userSession.session}">
                                     
                                     <li class="nav-item" style="position: absolute; right: 0">
-                                        <a class="nav-link" href="index.jsp">🟢${userSession.email}</a>
+                                        <a class="nav-link" onclick="logout()">🟢${userSession.email}</a>
                                     </li> 
+                         
                                 </c:when>
                                 <c:otherwise>
                                     <li class="nav-item" >
@@ -60,5 +61,7 @@
             </nav>
         </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./validation/delete-message.js"></script>
+    </body>
 </html>

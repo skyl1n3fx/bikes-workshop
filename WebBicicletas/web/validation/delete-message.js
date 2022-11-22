@@ -25,3 +25,26 @@ function deleteEntity(name, pk) {
         }
     })
 }
+
+
+function logout() {
+    Swal.fire({
+        icon: 'warning',
+        title: 'Cerrar sesion',
+        text: 'Estas seguro?',
+        showCancelButton: true,
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Si, cerrar sesion",
+    }).then((result) => {
+        if (result.value) {
+            Swal.fire(
+                    '¡Logout!',
+                    'Ha cerrado sesion',
+                    'success'
+                    ).then(function () {
+                window.location.href = "login";
+            })
+        }
+    })
+}

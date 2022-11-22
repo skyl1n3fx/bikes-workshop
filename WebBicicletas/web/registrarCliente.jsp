@@ -133,7 +133,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <div class="d-flex flex-row align-items-center mb-4">
+                                            <div class="d-flex flex-row align-items-center mb-4" style="display: none;">
                                                 <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                                 <div class="form-outline flex-fill mb-0">
                                                     <select id='cboTipo' name='cboTipo'>

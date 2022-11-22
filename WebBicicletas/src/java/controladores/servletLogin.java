@@ -53,7 +53,8 @@ public class servletLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getSession().removeAttribute("userSession");
+        response.sendRedirect("index.jsp");
     }
 
     /**
@@ -79,7 +80,7 @@ public class servletLogin extends HttpServlet {
             empleado =  daoE.findUser(email, password);
             
             if(empleado != null){
-                Usuario usuario = new Usuario(email,password,3);
+                Usuario usuario = new Usuario(email,password,3, true);
                 request.getSession().setAttribute("userSession", usuario);
                 response.sendRedirect("index.jsp");
                 return;
@@ -92,7 +93,7 @@ public class servletLogin extends HttpServlet {
             ClienteDao daoC = new ClienteDao();  
             cliente = daoC.findUser(email, password);
             if(cliente != null){
-                Usuario usuario = new Usuario(email,password,3);
+                Usuario usuario = new Usuario(email,password,3, true);
                 request.getSession().setAttribute("userSession", usuario);
                 response.sendRedirect("index.jsp");
                 return;
