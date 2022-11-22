@@ -11,6 +11,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!-- Establecemos la conexión a la BD -->
+<c:if test="${ userSession.tipo != 2}">
+    <c:redirect url="./login.jsp" >
+        <c:param name="errMsg" value="Please Enter UserName and Password" />
+    </c:redirect>
+</c:if>
 <sql:setDataSource var="dataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/basenegrotono?zeroDateTimeBehavior=convertToNull" user="root" password=""></sql:setDataSource>
 <sql:query dataSource="${dataSource}" var="products">
     SELECT p.id, p.precio, p.stock, p.descripcion,
@@ -40,7 +45,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     </head>
-    <body>
+    <body style="background: #000">
         <jsp:include page="./navbar.jsp"></jsp:include>
         <table class="table table-dark table-striped">
   <thead>
@@ -56,7 +61,10 @@
       <th scope="col">Accion</th>
     </tr>
   </thead>
-        <a class="btn btn-success" href="add-product.jsp">Agregar Producto</a>
+  <div style="margin: 20px">
+      <a class="btn btn-success" href="add-product.jsp">Agregar Producto</a>
+  </div>
+        
         <tbody>
         <c:forEach var="x" items="${products.rows}">
           <tr>
@@ -88,11 +96,11 @@
         </c:forEach>
         </tbody>
       </table>
-    <form name="reporte" action="./servletPdf">
+    <form name="reporte" action="./servletPdf" style="margin: 20px;">
         <input class="btn btn-success" type="submit" value="Visualizar Pdf"  name="btn-ver"/>
     </form>
         
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../../validation/delete-message.js"></script>
+    <script src="./validation/delete-message.js"></script>
     </body>
 </html>

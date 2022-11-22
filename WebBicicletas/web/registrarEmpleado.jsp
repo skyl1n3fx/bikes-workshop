@@ -5,6 +5,11 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<c:if test="${ userSession.tipo != 2}">
+    <c:redirect url="./login.jsp" >
+        <c:param name="errMsg" value="Please Enter UserName and Password" />
+    </c:redirect>
+</c:if>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -45,7 +50,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../index.jsp">Home</a>
                         </li>
-                        
+                        <li class="nav-item"  >
+                            <a class="nav-link"  data-bs-toggle="modal" data-bs-target="#modalAgregar" >Añadir producto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="listar.jsp">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="registrarEmpleado.jsp">Registro Empleado</a>
+                        </li>
                     </ul>
                 </div> 
             </div>
@@ -60,24 +73,98 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Empleado</p>
+                                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrarse</p>
 
                                         <form action="../servletEmpleado" id="formulario" method ="GET" >
-                                       
-                                            <button type="submit" class="btn btn-primary" name="btnAccion" id="btnAccion" value="Listar">Liquidaciones</button>
-                                        </form>
-                                        
-                                        <form action="../servletEmpleado" id="formulario" method ="GET" >
-                                       
+
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="text" id="txtNombre" class="form-control" name="txtNombre" required/>
+                                                    <label class="form-label" for="form3Example1c" id="txtNombre" >nombre</label>
+                                                </div>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="text" id="txtApellido" class="form-control" name="txtApellido" required/>
+                                                    <label class="form-label" for="form3Example1c" id="txtApellido">Apellido</label>
+                                                </div>
+                                            </div>
                                             
-                                            <button type="submit" class="btn btn-dark" name="btnAccion" id="btnAccion" value="Anticipo">Anticipos</button>
-                                        </form>
-                                        
-                                        <form action="../servletEmpleado" id="formulario" method ="GET" >
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="text" id="txtRut" class="form-control" name="txtRut" required/>
+                                                    <label class="form-label" for="form3Example4cd" id="txtRut">Rut</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="email" id="txtEmail" class="form-control"  name="txtEmail" required/>
+                                                    <label class="form-label" for="form3Example3c" id="txtEmail">Email</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="number" id="txtSueldo" class="form-control" name="txtSueldo" required/>
+                                                    <label class="form-label" for="form3Example4cd" id="txtSueldo">Sueldo Base</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <label class="form-label" for="form3Example4cd" id="cboAfp">AFP</label>
+                                                    <select id='cboAfp' name='cboAfp'>
+                                                        <option value='1'>AFP Capital</option>
+                                                        <option value='2'>AFP Hábitat</option>
+                                                        <option value='3'>ProVida AFP</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <label class="form-label" for="form3Example4cd" id="cboSalud">Salud</label>
+                                                    <select id='cboSalud' name='cboSalud'>
+                                                        <option value='1'>Fonasa</option>
+                                                        <option value='2'>Isapre</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="text" id="txtUsuario" class="form-control" name="txtUsuario" required/>
+                                                    <label class="form-label" for="form3Example4c" id="txtUsuario">Usuario Empleado</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="password" id="txtContrasena" class="form-control" name="txtContrasena" required/>
+                                                    <label class="form-label" for="form3Example4cd" id="txtContrasena">Contraseña</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <label class="form-label" for="form3Example4cd" id="cboTipo">Rol</label>
+                                                    <select id='cboTipo' name='cboTipo'>
+                                                        <option value='3'>Empleado</option>
+                                                        <option value='2'>Administrador</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
                                        
-                                            
-                                            
-                                            <button type="submit" class="btn btn-danger" name="btnAccion" id="btnAccion" value="Eliminar">Renunciar</button>
+                                            <button type="submit" class="btn btn-primary" name="btnAccion" id="btnAccion" value="Agregar">Registrarse</button>
                                         </form>
 
 
