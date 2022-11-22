@@ -10,12 +10,14 @@ package model.dto;
  * @author duguz
  */
 public class Usuario {
+    private Integer id;
     private String email;
     private String password;
     private int tipo;
     private boolean session;
 
-    public Usuario(String email, String password, int tipo, boolean session) {
+    public Usuario(Integer id,String email, String password, int tipo, boolean session) {
+        this.id = id;
         this.email = email;
         this.password = password;
         this.tipo = tipo;
@@ -32,6 +34,14 @@ public class Usuario {
 
     public String getPassword() {
         return password;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setPassword(String password) {

@@ -80,7 +80,7 @@ public class servletLogin extends HttpServlet {
             empleado =  daoE.findUser(email, password);
             
             if(empleado != null){
-                Usuario usuario = new Usuario(email,password,empleado.getTipocuenta().getId(), true);
+                Usuario usuario = new Usuario(empleado.getId(),email,password,empleado.getTipocuenta().getId(), true);
                 request.getSession().setAttribute("userSession", usuario);
                 response.sendRedirect("index.jsp");
                 return;
@@ -93,7 +93,7 @@ public class servletLogin extends HttpServlet {
             ClienteDao daoC = new ClienteDao();  
             cliente = daoC.findUser(email, password);
             if(cliente != null){
-                Usuario usuario = new Usuario(email,password,1, true);
+                Usuario usuario = new Usuario(cliente.getId(),email,password,1, true);
                 request.getSession().setAttribute("userSession", usuario);
                 response.sendRedirect("index.jsp");
                 return;
