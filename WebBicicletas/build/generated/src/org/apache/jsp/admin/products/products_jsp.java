@@ -111,6 +111,7 @@ public final class products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      <th scope=\"col\">Accion</th>\n");
       out.write("    </tr>\n");
       out.write("  </thead>\n");
+      out.write("        <a class=\"btn btn-success\" href=\"add-product.jsp\">Agregar Producto</a>\n");
       out.write("        <tbody>\n");
       out.write("        ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
@@ -118,6 +119,9 @@ public final class products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        </tbody>\n");
       out.write("      </table>\n");
+      out.write("    <form name=\"reporte\" action=\"../../servletPdf\">\n");
+      out.write("        <input class=\"btn btn-success\" type=\"submit\" value=\"Visualizar Pdf\"  name=\"btn-ver\"/>\n");
+      out.write("    </form>\n");
       out.write("        \n");
       out.write("    <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>\n");
       out.write("    <script src=\"../../validation/delete-message.js\"></script>\n");
