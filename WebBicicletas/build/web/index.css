@@ -137,12 +137,46 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 
 
+.strikethrough {
+  position: relative;
+}
+.strikethrough:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 1px solid red;
+  border-color: inherit;
+  
+  -webkit-transform:rotate(-5deg);
+  -moz-transform:rotate(-5deg);
+  -ms-transform:rotate(-5deg);
+  -o-transform:rotate(-5deg);
+  transform:rotate(-5deg);
+}
 
 
+.container {
+  position: relative;
+}
 
+#triangle-topleft {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-top: 100px solid #17d90d;
+  border-right: 100px solid transparent;
+  }
 
-
-
-
-
-
+.text-block {
+  color: white;
+  position: relative;
+  top: -60px;
+  left: 15px;
+  font-weight: bold;
+  padding:5px;
+  transform: rotate(-45deg);
+}
