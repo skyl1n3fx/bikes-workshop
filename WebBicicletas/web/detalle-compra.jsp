@@ -30,11 +30,11 @@
             </tr>
           </thead>
           <tbody>
-          <c:forEach var="x" items="${compras.rows}">
+          <c:forEach var="x" items="${listDetail}">
             <tr>
               <th scope="row">${x.id}</th>
               <td>${x.cantidad}</td>
-              <td>Producto</td>
+              <td>${x.producto.descripcion}</td>
             </tr>
           </c:forEach>
             

@@ -20,7 +20,7 @@ import model.dto.ProductoVenta;
  *
  * @author duguz
  */
-@WebServlet(name = "servletCompra", urlPatterns = {"/servletCompra"})
+@WebServlet(name = "compra", urlPatterns = {"/compra"})
 public class servletCompra extends HttpServlet {
 
     /**
@@ -47,18 +47,17 @@ public class servletCompra extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    private List<ProductoVenta> loadData(){
-        ProductoVentaDao dao = new ProductoVentaDao();
-        return null;
-        
-    }
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         if(request.getParameter("id")!=null){
-            loadData();
+            ProductoVentaDao dao = new ProductoVentaDao();
+            List<ProductoVenta> detail = dao.filterByIdVenta(Integer.parseInt(request.getParameter("id")));
+            request.getSession().setAttribute("listDetail", detail);
+            response.sendRedirect("detalle-compra.jsp");
+            return;
         }
     }
 
