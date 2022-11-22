@@ -13,11 +13,13 @@ public class Usuario {
     private String email;
     private String password;
     private int tipo;
+    private boolean session;
 
-    public Usuario(String email, String password, int tipo) {
+    public Usuario(String email, String password, int tipo, boolean session) {
         this.email = email;
         this.password = password;
         this.tipo = tipo;
+        this.session = session;
     }
 
     public String getEmail() {
@@ -43,7 +45,16 @@ public class Usuario {
     public void setTipo(int tipo) {
         this.tipo = tipo;
     }
+
+    public boolean isSession() {
+        return session;
+    }
+
+    public void setSession(boolean session) {
+        this.session = session;
+    }
     
+   
     
     
 }
