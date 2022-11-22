@@ -60,7 +60,7 @@
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <a class="nav-link" href="products.jsp">Clientes</a>
+                                        <a class="nav-link" href="clients.jsp">Clientes</a>
                                     </li>
                                 </c:when>
                                 <c:when test="${userSession.session && userSession.tipo == 3}">

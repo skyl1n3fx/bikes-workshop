@@ -65,8 +65,8 @@
          
             <td>$${x.sueldo_base}</td>
             <td>
-                <a class="btn btn-primary" href="./servletProducto?id=${x.id}">Modificar</a>
-                <a class="btn btn-danger"  onclick="deleteEntity('Producto','${x.id}')">Eliminar</a>
+                <a class="btn btn-primary" href="./servletEmpleado?id=${x.id}">Modificar</a>
+                <a class="btn btn-danger"  onclick="deleteEntity('Empleado','${x.id}')">Eliminar</a>
             </td>
           </tr>
         </c:forEach>
