@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
+              <!-- Incluimos la barra de navegación -->
+        <jsp:include page="./navbar.jsp"></jsp:include>
+
+
         <h1>Hello World!</h1>
     </body>
 </html>
