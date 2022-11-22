@@ -38,7 +38,7 @@
     </head>
     <body>
         <h1>Actualizar producto</h1>
-            <form action="./servletProducto" method="POST">  
+            <form action="./servletProducto" method="POST" style="margin: 50px 500px 0 500px">  
              <input name="txtId" type="hidden" value="${productDetail.id}">
                 
               <div class="mb-3">

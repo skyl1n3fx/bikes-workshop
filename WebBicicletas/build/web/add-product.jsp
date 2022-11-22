@@ -38,7 +38,7 @@
     </head>
     <body>
         <h1>Crear producto</h1>
-            <form action="./servletProducto" method="POST">  
+            <form action="./servletProducto" method="POST" style="margin: 50px 500px 0 500px">  
                 
               <div class="mb-3">
                 <label for="txtDescripcion" class="form-label">Descripcion</label>
