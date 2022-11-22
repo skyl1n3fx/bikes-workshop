@@ -49,6 +49,18 @@
                                 <a class="nav-link" href="reparacion.jsp">Servicios</a>
                             </li>
                             
+                            <c:choose>
+                                <c:when test="${userSession.session && userSession.tipo == 2}">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="products.jsp">Productos</a>
+                                    </li>
+                                </c:when>
+                                <c:when test="${userSession.session && userSession.tipo == 3}">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="reparacion.jsp">xd</a>
+                                    </li>            
+                                </c:when>            
+                            </c:choose>
                             
                             <c:choose>
                                 <c:when test="${userSession.session}">

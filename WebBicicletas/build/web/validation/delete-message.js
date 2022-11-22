@@ -20,7 +20,7 @@ function deleteEntity(name, pk) {
                     name + ' Eliminado correctamente',
                     'success'
                     ).then(function () {
-                window.location.href = "../../servlet" + (name) + "?pk=" + (pk);
+                window.location.href = "./servlet" + (name) + "?pk=" + (pk);
             })
         }
     })

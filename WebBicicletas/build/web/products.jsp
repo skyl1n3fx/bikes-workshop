@@ -41,6 +41,7 @@
 
     </head>
     <body>
+        <jsp:include page="./navbar.jsp"></jsp:include>
         <table class="table table-dark table-striped">
   <thead>
     <tr>
@@ -80,7 +81,7 @@
             <td>${x.stock}</td>
             <td>$${x.descuento}</td>
             <td>
-                <a class="btn btn-primary" href="../../servletProducto?id=${x.id}">Modificar</a>
+                <a class="btn btn-primary" href="./servletProducto?id=${x.id}">Modificar</a>
                 <a class="btn btn-danger"  onclick="deleteEntity('Producto','${x.id}')">Eliminar</a>
             </td>
           </tr>
