@@ -32,18 +32,26 @@ public abstract class BaseModel <T> extends GeneratePDF<T> implements IOperation
         return modelName;
     }
     
-    private void connect(){
+    public Session getSession(){
+        return this.session;
+    }
+    
+    public Transaction getTransaction(){
+        return this.transaction;
+    }
+    
+    public void connect(){
         // Nos conectamos a la bd
         session = HibernateUtil.getSessionFactory().openSession();
         transaction = session.beginTransaction();
     }
     
-    private void disconnect(){
+    public void disconnect(){
         // Nos desconectamos de la bd
         session.close();
     }
     
-    private void commit(){
+    public void commit(){
         transaction.commit();
     }
     

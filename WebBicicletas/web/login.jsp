@@ -46,7 +46,7 @@
                                             <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicia Sesión</h5>
 
                                             <div class="form-outline mb-4">
-                                                <input type="email" id="email_log" class="form-control form-control-lg" name="email_log" />
+                                                <input type="email" id="email_log" class="form-control form-control-lg" name="email_log"/>
                                                 <label class="form-label" for="form2Example17">Correo Electronico</label>
                                             </div>
 

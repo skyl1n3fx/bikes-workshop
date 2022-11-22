@@ -12,6 +12,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.dao.ClienteDao;
+import model.dao.EmpleadoDao;
+
+
 
 /**
  *
@@ -64,6 +68,16 @@ public class servletLogin extends HttpServlet {
         // Recibimos la data para iniciar sesión
         String email = request.getParameter("email_log");
         String password = request.getParameter("contra_log");
+        
+        // Intente buscar si encuentra el empleado por correo y contraseña
+        try {
+            EmpleadoDao daoE = new EmpleadoDao();
+            
+        } catch (Exception e) {
+        }
+        
+        
+        ClienteDao daoC = new ClienteDao();
         
     }
 
