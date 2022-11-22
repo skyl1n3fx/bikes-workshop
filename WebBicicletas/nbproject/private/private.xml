@@ -2,20 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/admin/products/products.jsp</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/productcard.css</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/src/java/controladores/servletCliente.java</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/empleado/empleado.jsp</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/src/java/model/base/BaseModel.java</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/admin/listar.jsp</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/empleado/anticipo.jsp</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/index.jsp</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/index.css</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/login.css</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/compra.jsp</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/src/java/controladores/servletEmpleado.java</file>
-            <file>file:/C:/Users/jorge/Escritorio/encargo_java/WebBicicletas/web/productos.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

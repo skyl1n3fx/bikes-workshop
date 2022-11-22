@@ -55,4 +55,5 @@ Contributor(s):
   <table-filter match-name="empleado"/>
   <table-filter match-name="categoria"/>
   <table-filter match-name="afp"/>
+  <table-filter match-name="carrito"/>
 </hibernate-reverse-engineering>

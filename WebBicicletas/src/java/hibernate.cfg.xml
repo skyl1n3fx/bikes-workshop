@@ -63,5 +63,6 @@ Contributor(s):
     <mapping resource="model/dto/Renuncia.hbm.xml"/>
     <mapping resource="model/dto/Marca.hbm.xml"/>
     <mapping resource="model/dto/Venta.hbm.xml"/>
+    <mapping resource="model/dto/Carrito.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
