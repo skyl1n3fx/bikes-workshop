@@ -3,7 +3,7 @@
     Created on : 22-11-2022, 1:20:44
     Author     : duguz
 --%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -39,10 +39,20 @@
                             </li>
                             
                             
-                           
-                            <li class="nav-item" >
-                                <a class="nav-link" href="login.jsp">Iniciar Sesión</a>
-                            </li> 
+                            <c:choose>
+                                <c:when test="${userSession.tipo > 0}">
+                                    
+                                    <li class="nav-item" style="position: absolute; right: 0">
+                                        <a class="nav-link" href="index.jsp">🟢${userSession.email}</a>
+                                    </li> 
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="nav-item" >
+                                        <a class="nav-link" href="login.jsp">Iniciar Sesión</a>
+                                    </li> 
+                                </c:otherwise>
+                            </c:choose>
+          
       
                         </ul>
                     </div> 

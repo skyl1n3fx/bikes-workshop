@@ -16,6 +16,7 @@ import model.dao.ClienteDao;
 import model.dao.EmpleadoDao;
 import model.dto.Cliente;
 import model.dto.Empleado;
+import model.dto.Usuario;
 
 
 
@@ -76,8 +77,10 @@ public class servletLogin extends HttpServlet {
         try {
             EmpleadoDao daoE = new EmpleadoDao();
             empleado =  daoE.findUser(email, password);
+            
             if(empleado != null){
-                System.out.println("owo");
+                Usuario usuario = new Usuario(email,password,3);
+                request.getSession().setAttribute("userSession", usuario);
                 response.sendRedirect("index.jsp");
                 return;
             }
@@ -89,7 +92,8 @@ public class servletLogin extends HttpServlet {
             ClienteDao daoC = new ClienteDao();  
             cliente = daoC.findUser(email, password);
             if(cliente != null){
-                System.out.println("uwu");
+                Usuario usuario = new Usuario(email,password,3);
+                request.getSession().setAttribute("userSession", usuario);
                 response.sendRedirect("index.jsp");
                 return;
             }

@@ -122,8 +122,6 @@
                 </div>
             </div>
 
-    
-
             <!-- TOP PRODUCTOS -->
             <div class="container-fluid padding-bottom" >
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
