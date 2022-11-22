@@ -42,7 +42,16 @@
                     <div class="card-body text-center">
                     <p class="card-text">${x.descripcion}</p>
                     <p class="card-text">Stock: ${x.stock}</p>
-                    <p class="card-text" style="color: green">$${x.precio}</p>
+                    <c:choose>
+                        <c:when test = "${x.descuento > 0}">
+                            <span style="text-decoration:line-through; color: red">$${x.precio}</span>
+                            <span style="font-size: 30px; color: #17d90d;">$${x.precio - x.descuento}</span>
+                        </c:when>
+
+                        <c:otherwise>
+                                   <span style="font-size: 30px; color: #17d90d;">$${x.precio}</span>
+                        </c:otherwise>
+                    </c:choose>
                     <input class="btn btn-success" value="Comprar">
                     </div>
                 </div>
