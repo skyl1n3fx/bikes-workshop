@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2022 a las 06:58:32
+-- Tiempo de generación: 22-11-2022 a las 23:12:21
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -61,6 +61,25 @@ CREATE TABLE `anticipo` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE `carrito` (
+  `id` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `carrito`
+--
+
+INSERT INTO `carrito` (`id`, `id_producto`, `id_cliente`) VALUES
+(1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `categoria`
 --
 
@@ -104,7 +123,30 @@ INSERT INTO `cliente` (`id`, `nombre`, `apellido`, `direccion`, `telefono`, `ema
 (1, 'Jhon', 'Perez', 'Puente Alto', 9123123, 'jhon@gmail.com', 1, '123'),
 (2, 'jose', 'perez', 'puente', 2254135, 'jose@duoc.cl', 1, '123'),
 (3, 'jose', 'perez', 'puente', 2254135, 'jose@duoc.cl', 1, '123'),
-(4, 'Jhonnn', 'Perez', 'Puente Alto', 9123123, 'jhon@gmail.com', 1, '123');
+(4, 'Jhonnn', 'Perez', 'Puente Alto', 9123123, 'jhon@gmail.com', 1, '123'),
+(5, 'fsd', 'fds', 'fsd', 3443, 'ola@gmail.com', 1, 'xd'),
+(6, 'gfd', 'gdfg', 'gdfg', 5345, 'olffa@gmail.com', 1, 'xd'),
+(7, ' mati', 'a', 'fdsfsd', 23321, 'prueba@gmail.com', 1, 'prueba');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `consulta`
+--
+
+CREATE TABLE `consulta` (
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(1000) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `estado` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `consulta`
+--
+
+INSERT INTO `consulta` (`id`, `descripcion`, `id_cliente`, `estado`) VALUES
+(4, 'xd', 1, 'REVISADO');
 
 -- --------------------------------------------------------
 
@@ -131,7 +173,7 @@ CREATE TABLE `empleado` (
 --
 
 INSERT INTO `empleado` (`id`, `rut`, `nombre`, `apellido`, `email`, `sueldo_base`, `id_afp`, `id_salud`, `user_empe`, `contra_emp`, `id_tipoCuenta`) VALUES
-(1, '256425166-2', 'fifer', 'flores', 'fifer@duoc.cl', 350000, 1, 1, 'fifer', '123', 3),
+(1, '256425166-2', 'fifer', 'flores', 'fifer@duoc.cl', 350000, 1, 1, 'fifer', '123', 2),
 (2, '2251614-2', 'fifer', 'nulo', 'fifer@duoc.com', 350000, 1, 1, 'fif', '123', 3);
 
 -- --------------------------------------------------------
@@ -166,7 +208,8 @@ CREATE TABLE `marca` (
 
 INSERT INTO `marca` (`id`, `descripcion`) VALUES
 (1, 'shimano'),
-(2, 'sram');
+(2, 'sram'),
+(8, 'Prueba');
 
 -- --------------------------------------------------------
 
@@ -190,9 +233,13 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `precio`, `stock`, `descripcion`, `id_marca`, `imagen`, `id_categoria`, `descuento`) VALUES
-(3, 350000, 20, 'bicicleta', 1, 'img1', 1, 20000),
-(17, 350000, 20, 'bicicleta', 1, 'img1', 1, 20000),
-(18, 350000, 20, 'a', 1, 'img1', 1, 20000);
+(3, 350000, 110, 'bicicleta', 8, 'https://images.lider.cl/wmtcl?source=url[file:/productos/1325384a.jpg]&sink', 4, 105000),
+(22, 200000, 3, 'fsfs', 2, 'https://home.ripley.cl/store/Attachment/WOP/D192/2000386350667/2000386350667-2.jpg', 2, 0),
+(23, 300000, 6, 'Bicicleta', 2, 'https://www.lapolar.cl/dw/image/v2/BCPP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw54b4dc9c/images/large/25325176.jpg?sw=400&sh=400&sm=fit', 4, 0),
+(24, 250000, 8, 'Bicicleta', 2, 'https://pedalia.cc/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg', 1, 0),
+(25, 250000, 8, 'Bicicleta', 2, 'https://pedalia.cc/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg', 1, 0),
+(26, 400000, 10, 'Bicicleta electrica', 1, 'https://falabella.scene7.com/is/image/Falabella/882097994_1?wid=800&hei=800&qlt=70', 3, 0),
+(27, 150000, 40, 'Bicicleta', 2, 'https://www.oxfordstore.cl/media/catalog/product/cache/cb1ea22e42c95eeb3d4e77abf38ffa96/c/2/c21_c23401m_habit_3_crd_pd_1_1.jpg', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -207,6 +254,13 @@ CREATE TABLE `producto_venta` (
   `id_venta` int(10) NOT NULL,
   `id_producto` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `producto_venta`
+--
+
+INSERT INTO `producto_venta` (`id`, `cantidad`, `total`, `id_venta`, `id_producto`) VALUES
+(1, 1, 100, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -238,7 +292,9 @@ CREATE TABLE `reparacion` (
 --
 
 INSERT INTO `reparacion` (`id`, `nombre_repa`, `descripcion`) VALUES
-(1, 'cleta', 'rota');
+(1, 'cleta', 'rota'),
+(3, 'gd', 'gfd'),
+(4, 'dsfsd', 'fds');
 
 -- --------------------------------------------------------
 
@@ -276,6 +332,7 @@ CREATE TABLE `tipocuenta` (
 --
 
 INSERT INTO `tipocuenta` (`id`, `descripcion`) VALUES
+(0, 'Ola'),
 (1, 'Usuario'),
 (2, 'Administrador'),
 (3, 'Empleado');
@@ -292,6 +349,13 @@ CREATE TABLE `venta` (
   `id_cliente` int(9) NOT NULL,
   `id_empleado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`id`, `fecha_venta`, `id_cliente`, `id_empleado`) VALUES
+(1, '2022-11-23', 1, 2);
 
 --
 -- Índices para tablas volcadas
@@ -311,6 +375,12 @@ ALTER TABLE `anticipo`
   ADD KEY `id_empleado` (`id_empleado`);
 
 --
+-- Indices de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
@@ -322,6 +392,12 @@ ALTER TABLE `categoria`
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`),
   ADD KEY `tipo_usuario` (`id_tipoCuenta`);
+
+--
+-- Indices de la tabla `consulta`
+--
+ALTER TABLE `consulta`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `empleado`
@@ -405,6 +481,12 @@ ALTER TABLE `anticipo`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
@@ -414,7 +496,13 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `consulta`
+--
+ALTER TABLE `consulta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
@@ -432,19 +520,19 @@ ALTER TABLE `liquidacione`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `producto_venta`
 --
 ALTER TABLE `producto_venta`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `renuncia`
@@ -456,7 +544,7 @@ ALTER TABLE `renuncia`
 -- AUTO_INCREMENT de la tabla `reparacion`
 --
 ALTER TABLE `reparacion`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `salud`
@@ -468,7 +556,7 @@ ALTER TABLE `salud`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
