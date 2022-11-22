@@ -52,8 +52,9 @@ public class ProductoDao extends BaseModel<Producto>{
                 table.addCell("$"+product.getPrecio());
                 try {
                     table.addCell(super.imageTable(product.getImagen()));
+                    //https://us.123rf.com/450wm/surfupvector/surfupvector1908/surfupvector190802662/129243509-icono-de-l%C3%ADnea-de-arte-denegado-censura-no-hay-foto-no-hay-imagen-disponible-rechazar-o-cancelar-con.jpg?ver=6
                 } catch (IOException ex) {
-                    Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+                    table.addCell("N/A");
                 }
                 
 

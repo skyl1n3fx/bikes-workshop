@@ -87,6 +87,9 @@
         </c:forEach>
         </tbody>
       </table>
+    <form name="reporte" action="../../servletPdf">
+        <input class="btn btn-success" type="submit" value="Visualizar Pdf"  name="btn-ver"/>
+    </form>
         
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../validation/delete-message.js"></script>

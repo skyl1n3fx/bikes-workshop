@@ -92,7 +92,12 @@ public class Producto  implements java.io.Serializable {
     }
     
     public void setImagen(String imagen) {
-        this.imagen = imagen;
+        if(imagen.equals("")){
+            this.imagen = "https://us.123rf.com/450wm/surfupvector/surfupvector1908/surfupvector190802662/129243509-icono-de-l%C3%ADnea-de-arte-denegado-censura-no-hay-foto-no-hay-imagen-disponible-rechazar-o-cancelar-con.jpg?ver=6";
+        }else{
+            this.imagen = imagen;
+        }
+        
     }
     public int getDescuento() {
         return this.descuento;
