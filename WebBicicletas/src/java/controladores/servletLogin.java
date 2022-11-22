@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.dao.ClienteDao;
 import model.dao.EmpleadoDao;
+import model.dto.Cliente;
+import model.dto.Empleado;
 
 
 
@@ -68,16 +70,38 @@ public class servletLogin extends HttpServlet {
         // Recibimos la data para iniciar sesión
         String email = request.getParameter("email_log");
         String password = request.getParameter("contra_log");
-        
+        Cliente cliente = null;
+        Empleado empleado = null;
         // Intente buscar si encuentra el empleado por correo y contraseña
         try {
             EmpleadoDao daoE = new EmpleadoDao();
+            empleado =  daoE.findUser(email, password);
+            if(empleado != null){
+                System.out.println("owo");
+                response.sendRedirect("index.jsp");
+                return;
+            }
+        } catch (Exception e) {
             
+        }
+        
+        try {
+            ClienteDao daoC = new ClienteDao();  
+            cliente = daoC.findUser(email, password);
+            if(cliente != null){
+                System.out.println("uwu");
+                response.sendRedirect("index.jsp");
+                return;
+            }
         } catch (Exception e) {
         }
         
+        if(cliente == null || empleado == null){
+            response.sendRedirect("login.jsp");
+        }
         
-        ClienteDao daoC = new ClienteDao();
+        
+        
         
     }
 
