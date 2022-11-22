@@ -18,4 +18,9 @@ public class ProductoVentaDao extends BaseModel<ProductoVenta>{
     public String getModelName() {
         return ProductoVenta.class.getSimpleName();
     }
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

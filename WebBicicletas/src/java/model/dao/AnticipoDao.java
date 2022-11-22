@@ -17,4 +17,9 @@ public class AnticipoDao extends BaseModel<Anticipo>{
     public String getModelName() {
         return Anticipo.class.getSimpleName();
     }
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

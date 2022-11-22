@@ -18,4 +18,9 @@ public class EmpleadoDao extends BaseModel<Empleado> {
     public String getModelName() {
         return Empleado.class.getSimpleName();
     }
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

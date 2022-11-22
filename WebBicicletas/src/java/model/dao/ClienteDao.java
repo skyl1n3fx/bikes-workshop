@@ -18,4 +18,9 @@ public class ClienteDao extends BaseModel<Cliente> {
     public String getModelName() {
         return Cliente.class.getSimpleName();
     }
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

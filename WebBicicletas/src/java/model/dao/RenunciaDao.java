@@ -18,4 +18,9 @@ public class RenunciaDao extends BaseModel<Renuncia>{
     public String getModelName() {
         return Renuncia.class.getSimpleName();
     }
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

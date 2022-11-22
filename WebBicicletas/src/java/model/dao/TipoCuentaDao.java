@@ -18,4 +18,9 @@ public class TipoCuentaDao extends BaseModel<Tipocuenta> {
     public String getModelName() {
         return Tipocuenta.class.getSimpleName();
     }
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

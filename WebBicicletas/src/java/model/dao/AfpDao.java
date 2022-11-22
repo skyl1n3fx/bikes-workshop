@@ -17,4 +17,9 @@ public class AfpDao extends BaseModel<Afp>{
     public String getModelName() {
         return Afp.class.getSimpleName();
     }
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

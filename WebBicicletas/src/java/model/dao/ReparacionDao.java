@@ -18,4 +18,9 @@ public class ReparacionDao extends BaseModel<Reparacion> {
     public String getModelName() {
         return Reparacion.class.getSimpleName();
     }  
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

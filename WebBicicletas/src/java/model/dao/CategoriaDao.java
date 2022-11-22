@@ -18,5 +18,10 @@ public class CategoriaDao extends BaseModel<Categoria>{
     public String getModelName() {
         return Categoria.class.getSimpleName();
     }
+
+    @Override
+    public void addTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
