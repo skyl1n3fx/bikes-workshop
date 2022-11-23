@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2022 a las 23:12:21
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 23-11-2022 a las 04:42:33
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `afp` (
   `id` int(10) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
   `descuento` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `afp`
@@ -56,7 +56,7 @@ CREATE TABLE `anticipo` (
   `cantidad` int(10) NOT NULL,
   `fecha_antici` date NOT NULL,
   `id_empleado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,7 @@ CREATE TABLE `carrito` (
   `id` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `carrito`
@@ -86,7 +86,7 @@ INSERT INTO `carrito` (`id`, `id_producto`, `id_cliente`) VALUES
 CREATE TABLE `categoria` (
   `id` int(50) NOT NULL,
   `descripcion` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `categoria`
@@ -113,7 +113,7 @@ CREATE TABLE `cliente` (
   `email` varchar(255) NOT NULL,
   `id_tipoCuenta` int(1) NOT NULL,
   `contrasena` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cliente`
@@ -126,7 +126,11 @@ INSERT INTO `cliente` (`id`, `nombre`, `apellido`, `direccion`, `telefono`, `ema
 (4, 'Jhonnn', 'Perez', 'Puente Alto', 9123123, 'jhon@gmail.com', 1, '123'),
 (5, 'fsd', 'fds', 'fsd', 3443, 'ola@gmail.com', 1, 'xd'),
 (6, 'gfd', 'gdfg', 'gdfg', 5345, 'olffa@gmail.com', 1, 'xd'),
-(7, ' mati', 'a', 'fdsfsd', 23321, 'prueba@gmail.com', 1, 'prueba');
+(7, ' mati', 'a', 'fdsfsd', 23321, 'prueba@gmail.com', 1, 'prueba'),
+(8, 'juan ', 'sanchez', 'luis matte ', 12334, 'juan@123.com', 1, '123'),
+(9, 'juan', 'sanchez', 'nosee', 1234, 'juan@hotmai.com', 1, '123'),
+(10, 'queso', 'sanchez', 'luis matte ', 123, 'queso@hotmai.com', 1, '123'),
+(11, 'sebastian', 'sanchez', 'luis matte ', 123, 'sebastian@hotmail.com', 1, '123');
 
 -- --------------------------------------------------------
 
@@ -139,14 +143,20 @@ CREATE TABLE `consulta` (
   `descripcion` varchar(1000) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `estado` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `consulta`
 --
 
 INSERT INTO `consulta` (`id`, `descripcion`, `id_cliente`, `estado`) VALUES
-(4, 'xd', 1, 'REVISADO');
+(4, 'xd', 1, 'REVISADO'),
+(5, 'respuesta', 1, 'REVISADO'),
+(6, 'yes', 1, 'REVISADO'),
+(7, 'si', 1, 'REVISADO'),
+(8, 'bi', 9, 'PENDIENTE'),
+(9, 'si', 10, 'REVISADO'),
+(10, 'yes', 11, 'REVISADO');
 
 -- --------------------------------------------------------
 
@@ -166,15 +176,15 @@ CREATE TABLE `empleado` (
   `user_empe` varchar(30) NOT NULL,
   `contra_emp` varchar(30) NOT NULL,
   `id_tipoCuenta` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `empleado`
 --
 
 INSERT INTO `empleado` (`id`, `rut`, `nombre`, `apellido`, `email`, `sueldo_base`, `id_afp`, `id_salud`, `user_empe`, `contra_emp`, `id_tipoCuenta`) VALUES
-(1, '256425166-2', 'fifer', 'flores', 'fifer@duoc.cl', 350000, 1, 1, 'fifer', '123', 2),
-(2, '2251614-2', 'fifer', 'nulo', 'fifer@duoc.com', 350000, 1, 1, 'fif', '123', 3);
+(1, '256425166-2', 'fifer', 'flores', 'fifer@admin.cl', 350000, 1, 1, 'fifer', '123', 2),
+(2, '2251614-2', 'fifer', 'Flores', 'fifer@empleado.cl', 350000, 1, 1, 'fif', '123', 3);
 
 -- --------------------------------------------------------
 
@@ -189,7 +199,7 @@ CREATE TABLE `liquidacione` (
   `descuento_salud` int(15) NOT NULL,
   `total_liquido` int(15) NOT NULL,
   `id_empleado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -200,7 +210,7 @@ CREATE TABLE `liquidacione` (
 CREATE TABLE `marca` (
   `id` int(9) NOT NULL,
   `descripcion` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `marca`
@@ -226,20 +236,19 @@ CREATE TABLE `producto` (
   `imagen` varchar(255) NOT NULL,
   `id_categoria` int(50) NOT NULL,
   `descuento` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
 INSERT INTO `producto` (`id`, `precio`, `stock`, `descripcion`, `id_marca`, `imagen`, `id_categoria`, `descuento`) VALUES
-(3, 350000, 110, 'bicicleta', 8, 'https://images.lider.cl/wmtcl?source=url[file:/productos/1325384a.jpg]&sink', 4, 105000),
-(22, 200000, 3, 'fsfs', 2, 'https://home.ripley.cl/store/Attachment/WOP/D192/2000386350667/2000386350667-2.jpg', 2, 0),
+(3, 350000, 110, 'bicicleta', 8, 'https://images.lider.cl/wmtcl?source=url[file:/productos/1325384a.jpg]&sink', 4, 70000),
+(22, 200000, 3, 'Bicicletita', 2, 'https://home.ripley.cl/store/Attachment/WOP/D192/2000386350667/2000386350667-2.jpg', 2, 100000),
 (23, 300000, 6, 'Bicicleta', 2, 'https://www.lapolar.cl/dw/image/v2/BCPP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw54b4dc9c/images/large/25325176.jpg?sw=400&sh=400&sm=fit', 4, 0),
 (24, 250000, 8, 'Bicicleta', 2, 'https://pedalia.cc/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg', 1, 0),
 (25, 250000, 8, 'Bicicleta', 2, 'https://pedalia.cc/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg', 1, 0),
-(26, 400000, 10, 'Bicicleta electrica', 1, 'https://falabella.scene7.com/is/image/Falabella/882097994_1?wid=800&hei=800&qlt=70', 3, 0),
-(27, 150000, 40, 'Bicicleta', 2, 'https://www.oxfordstore.cl/media/catalog/product/cache/cb1ea22e42c95eeb3d4e77abf38ffa96/c/2/c21_c23401m_habit_3_crd_pd_1_1.jpg', 2, 0);
+(31, 50000, 50, 'ddd', 2, 'https://www.oxfordstore.cl/media/catalog/product/cache/cb1ea22e42c95eeb3d4e77abf38ffa96/l/a/lanai_1_1.jpg', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -253,14 +262,16 @@ CREATE TABLE `producto_venta` (
   `total` int(9) NOT NULL,
   `id_venta` int(10) NOT NULL,
   `id_producto` int(9) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `producto_venta`
 --
 
 INSERT INTO `producto_venta` (`id`, `cantidad`, `total`, `id_venta`, `id_producto`) VALUES
-(1, 1, 100, 1, 3);
+(10, 1, 1, 10, 23),
+(11, 1, 1, 11, 23),
+(12, 1, 1, 12, 24);
 
 -- --------------------------------------------------------
 
@@ -273,7 +284,7 @@ CREATE TABLE `renuncia` (
   `descripcion` varchar(150) NOT NULL,
   `fecha_renuncia` date NOT NULL,
   `id_empleado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -285,7 +296,7 @@ CREATE TABLE `reparacion` (
   `id` int(9) NOT NULL,
   `nombre_repa` varchar(150) NOT NULL,
   `descripcion` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `reparacion`
@@ -294,7 +305,11 @@ CREATE TABLE `reparacion` (
 INSERT INTO `reparacion` (`id`, `nombre_repa`, `descripcion`) VALUES
 (1, 'cleta', 'rota'),
 (3, 'gd', 'gfd'),
-(4, 'dsfsd', 'fds');
+(4, 'dsfsd', 'fds'),
+(5, 'SERVICIO', 'FSDFSD'),
+(6, 'servicio de mantencion', 'mantencion'),
+(7, 'reparacion', 'si'),
+(8, 'mantencion de bicicleta', 'bicicleta');
 
 -- --------------------------------------------------------
 
@@ -306,7 +321,7 @@ CREATE TABLE `salud` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
   `descuento` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `salud`
@@ -325,7 +340,7 @@ INSERT INTO `salud` (`id`, `descripcion`, `descuento`) VALUES
 CREATE TABLE `tipocuenta` (
   `id` int(1) NOT NULL,
   `descripcion` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipocuenta`
@@ -348,14 +363,16 @@ CREATE TABLE `venta` (
   `fecha_venta` date NOT NULL,
   `id_cliente` int(9) NOT NULL,
   `id_empleado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `venta`
 --
 
 INSERT INTO `venta` (`id`, `fecha_venta`, `id_cliente`, `id_empleado`) VALUES
-(1, '2022-11-23', 1, 2);
+(10, '2022-11-23', 9, 1),
+(11, '2022-11-23', 10, 1),
+(12, '2022-11-23', 11, 1);
 
 --
 -- Índices para tablas volcadas
@@ -496,13 +513,13 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `consulta`
 --
 ALTER TABLE `consulta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
@@ -526,13 +543,13 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `producto_venta`
 --
 ALTER TABLE `producto_venta`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `renuncia`
@@ -544,7 +561,7 @@ ALTER TABLE `renuncia`
 -- AUTO_INCREMENT de la tabla `reparacion`
 --
 ALTER TABLE `reparacion`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `salud`
@@ -556,7 +573,7 @@ ALTER TABLE `salud`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
