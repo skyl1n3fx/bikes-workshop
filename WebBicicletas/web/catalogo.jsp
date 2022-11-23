@@ -37,8 +37,8 @@
   
             <div class="container-fluid d-flex align-items-center">
                 <c:forEach var="x" items="${products.rows}">
-                <div class="card" style="width: 18rem;">
-                <img src="${x.imagen}" class="card-img-top" alt="...">
+                <div class="card" style="width: 18rem; ">
+                    <img src="${x.imagen}" width="200px" height="200px" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                     <p class="card-text">${x.descripcion}</p>
                     <p class="card-text">Stock: ${x.stock}</p>
@@ -49,10 +49,11 @@
                         </c:when>
 
                         <c:otherwise>
-                                   <span style="font-size: 30px; color: #17d90d;">$${x.precio}</span>
+                              <span style="font-size: 30px; color: #17d90d;">$${x.precio}</span>
                         </c:otherwise>
                     </c:choose>
-                    <input class="btn btn-success" value="Comprar">
+                              <a class="btn btn-success"  style="width: 100%" href="compra?producto=${x.id}">Comprar</a>
+                    
                     </div>
                 </div>
                 </c:forEach>                                

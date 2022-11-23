@@ -14,7 +14,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.dao.ProductoVentaDao;
+import model.dao.VentaDao;
+import model.dto.Cliente;
+import model.dto.Empleado;
 import model.dto.ProductoVenta;
+import model.dto.Usuario;
+import model.dto.Venta;
+import java.time.Instant;
+import java.util.Date;
+import java.time.LocalDateTime;  
+import java.time.format.DateTimeFormatter;  
+import model.dto.Producto;
 
 /**
  *
@@ -57,6 +67,26 @@ public class servletCompra extends HttpServlet {
             List<ProductoVenta> detail = dao.filterByIdVenta(Integer.parseInt(request.getParameter("id")));
             request.getSession().setAttribute("listDetail", detail);
             response.sendRedirect("detalle-compra.jsp");
+            return;
+        }
+        
+        if(request.getParameter("producto")!=null){
+            ProductoVentaDao dao = new ProductoVentaDao();
+            VentaDao daoV = new VentaDao();
+            Usuario usuario = (Usuario) request.getSession().getAttribute("userSession");
+            Cliente cliente = new Cliente();
+            cliente.setId(usuario.getId());
+            Empleado empleado = new Empleado();
+            empleado.setId(1);
+            Date date = new Date();
+            Venta venta = new Venta(cliente, empleado, date);
+            
+            daoV.create(venta);
+            Producto p = new Producto();
+            p.setId(Integer.parseInt(request.getParameter("producto")));
+            ProductoVenta detalle = new ProductoVenta(p, venta, 1, 1);
+            dao.create(detalle);
+            response.sendRedirect("catalogo.jsp");
             return;
         }
     }
