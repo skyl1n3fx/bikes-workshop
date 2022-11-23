@@ -61,7 +61,7 @@
             <td>${x.nombre}</td>
             <td>${x.apellido}</td>
             <td>${x.direccion}</td>
-            <td>$${x.email}</td>
+            <td>${x.email}</td>
             <td>
                 <a class="btn btn-primary" href="./servletCliente?id=${x.id}">Modificar</a>
                 <a class="btn btn-danger"  onclick="deleteEntity('Cliente','${x.id}')">Eliminar</a>

@@ -5,6 +5,13 @@
  */
 package model.dao;
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import java.util.List;
 import model.base.BaseModel;
 import model.dto.Empleado;
 import org.hibernate.Query;
@@ -20,10 +27,42 @@ public class EmpleadoDao extends BaseModel<Empleado> {
         return Empleado.class.getSimpleName();
     }
 
-    @Override
+   @Override
     public void addTable() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            super.openDocument();
+            List<Empleado> empleados = super.list();
+            super.addParagraph("Listado de empleados");
+            PdfPTable table = new PdfPTable(4);
+            PdfPCell cell1 = new PdfPCell(new Paragraph("ID", FontFactory.getFont("Arial",12,Font.BOLD, BaseColor.BLACK.BLACK)));
+            PdfPCell cell2 = new PdfPCell(new Paragraph("Nombre", FontFactory.getFont("Arial",12,Font.BOLD, BaseColor.BLACK.BLACK)));
+            PdfPCell cell3 = new PdfPCell(new Paragraph("Apellido", FontFactory.getFont("Arial",12,Font.BOLD, BaseColor.BLACK.BLACK)));
+            PdfPCell cell4 = new PdfPCell(new Paragraph("Sueldo", FontFactory.getFont("Arial",12,Font.BOLD, BaseColor.BLACK)));
+            table.addCell(cell1);
+            table.addCell(cell2);
+            table.addCell(cell3);
+            table.addCell(cell4);
+           
+            for (Empleado empleado : empleados) {
+                table.addCell("" + empleado.getId());
+                table.addCell(empleado.getNombre());
+                table.addCell(empleado.getApellido());
+                table.addCell(""+empleado.getSueldoBase());
+                
+
+            }
+
+            
+            super.addTable(table);
+            
+        } catch (Exception ex) {
+            System.out.println("");
+        }finally{
+            super.closeDocument();
+        }
+        
     }
+    
     
     public Empleado findUser(String email, String password){
         Empleado empleado = null;

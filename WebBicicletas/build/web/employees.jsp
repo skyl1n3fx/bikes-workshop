@@ -72,7 +72,7 @@
         </c:forEach>
         </tbody>
       </table>
-    <form name="reporte" action="./servletPdf" style="margin: 20px;">
+    <form name="reporte" action="./servletPdfEmp" style="margin: 20px;">
         <input class="btn btn-success" type="submit" value="Visualizar Pdf"  name="btn-ver"/>
     </form>
         
